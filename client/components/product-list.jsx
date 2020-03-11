@@ -28,13 +28,11 @@ class ProductList extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row .flex-wrap">
+        <div className="row">
           {this.state.products.map((singleProduct, index) => {
             return (<ProductListItem key={index} prodProp={singleProduct}
             />);
           })}
-          <div className="col-sm">
-          </div>
         </div>
       </div>
     );
