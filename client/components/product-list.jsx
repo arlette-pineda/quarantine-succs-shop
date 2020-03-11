@@ -1,4 +1,6 @@
 import React from 'react';
+import ProductListItem from './product-list-item';
+// import ProductListItem from './product-list-item';
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -6,6 +8,10 @@ class ProductList extends React.Component {
     this.state = {
       products: []
     };
+  }
+
+  componentDidMount() {
+    this.getProducts();
   }
 
   getProducts() {
@@ -23,7 +29,12 @@ class ProductList extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm"></div>
+          {this.state.products.map((singleProduct, index) => {
+            return (<ProductListItem key={index} prodProp={singleProduct}
+            />);
+          })}
+          <div className="col-sm">
+          </div>
         </div>
       </div>
     );
