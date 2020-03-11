@@ -1,15 +1,18 @@
 import React from 'react';
 
-function ProductListItem() {
+function ProductListItem(props) {
   return (
-    <div className="card widthCard">
-      <img src="/images/shake-weight.jpg" className="card-img-top" alt="..." />
+    // <div className="col-sm">
+    <div className="card col-sm-2" key={props.prodProp.id}>
+      <img src={props.prodProp.image} className="card-img-tops contain" />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">Some quick example text to build on the
-        card title and make up the bulk of the card&#39;s content.</p>
+        <h5 className="card-title">{props.prodProp.name}</h5>
+        <h6 className="card-subtitle mb-2 text-muted"> ${(props.prodProp.price / 100).toFixed(2)}</h6>
+        <p className="card-text">{props.prodProp.shortDescription}</p>
       </div>
-    </div>);
+    </div>
+    // </div>
+  );
 }
 
 export default ProductListItem;

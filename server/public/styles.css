@@ -1,3 +1,7 @@
 .widthCard {
   width: 18rem;
 }
+
+.contain {
+  object-fit: contain;
+}
