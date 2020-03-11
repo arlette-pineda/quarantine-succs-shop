@@ -3,7 +3,7 @@ import React from 'react';
 function ProductListItem() {
   return (
     <div className="card widthCard">
-      <img src="..." className="card-img-top" alt="..." />
+      <img src="/images/shake-weight.jpg" className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">Some quick example text to build on the
