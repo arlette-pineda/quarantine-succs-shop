@@ -9,7 +9,7 @@
 
 .img-style {
   width: 100%;
-  height: 15vw;
+  height: 10vw;
   object-fit: contain;
 }
 
@@ -50,6 +50,10 @@
 
 .img-details {
   width: 100%;
-  height: 30vw;
+  height: 20vw;
   object-fit: contain;
+}
+
+.prod-details-style {
+  border: darkgrey 1px solid;
 }

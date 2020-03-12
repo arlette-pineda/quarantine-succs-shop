@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductListItem from './product-list-item';
+// import ProductDetails from './product-details';
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -28,8 +29,8 @@ class ProductList extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          {this.state.products.map((singleProduct, index) => {
-            return (<ProductListItem key={index} prodProp={singleProduct}
+          {this.state.products.map((productPa, index) => {
+            return (<ProductListItem key={index} product={productPa}
             />);
           })}
         </div>
