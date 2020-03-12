@@ -8,7 +8,7 @@ class ProductDetails extends React.Component {
     };
   }
 
-  getProduct() {
+  getProductById() {
     fetch('/api/products/1')
       .then(response => response.json())
       .then(result => this.setState({
@@ -18,7 +18,7 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct();
+    this.getProductById();
   }
 
   render() {
