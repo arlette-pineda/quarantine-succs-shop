@@ -96,6 +96,12 @@ app.post('/api/cart', (req, res) => {
       error: 'Invalid productId, must be positive integer'
     });
   }
+  const sql = `
+  select "price"
+  from "products"
+  join "cartItems" using ("productId")
+  join "carts" using ("cartId")
+  `;
 });
 
 app.use('/api', (req, res, next) => {
