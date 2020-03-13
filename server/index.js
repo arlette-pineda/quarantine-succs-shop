@@ -87,6 +87,17 @@ app.get('/api/cart', (req, res, next) => {
     });
 });
 
+// POST to cart
+app.post('/api/cart', (req, res) => {
+  const product = req.body;
+  console.log('product body', product);
+  if (!parseInt(product, 10)) {
+    return res.status(400).json({
+      error: 'Invalid productId, must be positive integer'
+    });
+  }
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
