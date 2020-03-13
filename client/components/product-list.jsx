@@ -31,6 +31,7 @@ class ProductList extends React.Component {
         <div className="row">
           {this.state.products.map((productPa, index) => {
             return (<ProductListItem key={index} product={productPa}
+              onClick={() => this.props.setView('details', { productId: productPa.productId })}
             />);
           })}
         </div>
