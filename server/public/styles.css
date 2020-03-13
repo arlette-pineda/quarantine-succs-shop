@@ -2,7 +2,7 @@
   background-color: rgb(41, 48, 28);
   color: white;
   font-size: 1.5rem;
-  padding-left: 13%;
+  padding-left: 20%;
   padding-top: 2%;
   padding-bottom: 1%;
 }
@@ -11,4 +11,50 @@
   width: 100%;
   height: 15vw;
   object-fit: contain;
+}
+
+.test {
+  border: 2px solid rebeccapurple;
+}
+
+.test2 {
+  border: 2px solid deeppink;
+}
+
+.test3 {
+  border: 2px solid greenyellow;
+}
+
+.test4 {
+  border: 2px solid blue;
+}
+
+.test5 {
+  border: 2px solid seagreen;
+}
+
+.test6 {
+  border: 2px solid violet;
+}
+
+.test7 {
+  border: 2px solid brown;
+}
+.test8 {
+  border: 2px solid cyan;
+}
+
+.test9 {
+  border: 2px solid lightpink;
+}
+
+.img-details {
+  width: 100%;
+  height: 20vw;
+  object-fit: contain;
+}
+
+.prod-details-style {
+  border: darkgrey 1px solid;
+  box-shadow: 3px 3px 3px 3px gray;
 }
