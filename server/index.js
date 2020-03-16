@@ -69,7 +69,7 @@ app.get('/api/products/:productId', (req, res, next) => {
     });
 });
 
-// Get cart
+// GET cart
 app.get('/api/cart', (req, res, next) => {
   const sql = `
   select *
@@ -88,10 +88,10 @@ app.get('/api/cart', (req, res, next) => {
 });
 
 // POST to cart
-app.post('/api/cart', (req, res) => {
-  const product = req.body;
-  console.log('product body', product);
-  if (!parseInt(product, 10)) {
+app.post('/api/cart/', (req, res, next) => {
+  const productId = req.body.productId;
+  console.log('the product body here', productId);
+  if (!parseInt(productId, 10)) {
     return res.status(400).json({
       error: 'Invalid productId, must be positive integer'
     });
@@ -99,9 +99,37 @@ app.post('/api/cart', (req, res) => {
   const sql = `
   select "price"
   from "products"
-  join "cartItems" using ("productId")
-  join "carts" using ("cartId")
+  where "products"."productId" = $1
   `;
+  const value = [productId];
+  db.query(sql, value)
+    .then(result => {
+      if (result.rowCount === 0) {
+        throw new ClientError('product not found', 400);
+      }
+      const price = result.rows[0].price;
+      if (req.session && req.session.cartId) {
+        return { price: price, cardId: req.session.cartId };
+      }
+      const insertSql = `
+      insert into "carts" ("cartId", "createdAt")
+      values (default, default)
+      returning "cartId"
+      `;
+      return {
+        price: price,
+        cartId: db.query(insertSql)
+          .then(insertResult => {
+            console.log('the insertResult here', insertResult);
+            return insertResult.insertId;
+          })
+      };
+    })
+    .then(cartIdPriceResult => console.log('the cartIdPriceResult here', cartIdPriceResult))
+    .then()
+    .catch(err => {
+      next(err);
+    });
 });
 
 app.use('/api', (req, res, next) => {
