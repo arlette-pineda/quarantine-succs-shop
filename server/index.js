@@ -19,7 +19,7 @@ app.get('/api/health-check', (req, res, next) => {
     .catch(err => next(err));
 });
 
-// GET
+// GET products
 app.get('/api/products', (req, res, next) => {
   const sql = `
   select "productId",
@@ -41,7 +41,7 @@ app.get('/api/products', (req, res, next) => {
     });
 });
 
-// GET by ID
+// GET products by ID
 app.get('/api/products/:productId', (req, res, next) => {
   const { productId } = req.params;
   if (!parseInt(productId, 10)) {
@@ -64,6 +64,80 @@ app.get('/api/products/:productId', (req, res, next) => {
         res.json(product);
       }
     })
+    .catch(err => {
+      next(err);
+    });
+});
+
+// GET cart
+app.get('/api/cart', (req, res, next) => {
+  const sql = `
+  select *
+  from "carts"
+  `;
+  db.query(sql)
+    .then(result => {
+      res.status(200).json(result.rows);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+// POST to cart
+app.post('/api/cart/', (req, res, next) => {
+  const productId = req.body.productId;
+  console.log('the product body here', productId);
+  if (!parseInt(productId, 10)) {
+    return res.status(400).json({
+      error: 'Invalid productId, must be positive integer'
+    });
+  }
+  const sql = `
+  select "price"
+  from "products"
+  where "products"."productId" = $1
+  `;
+  const value = [productId];
+  db.query(sql, value)
+    .then(result => {
+      if (result.rowCount === 0) {
+        throw new ClientError('product not found', 400);
+      }
+
+      const price = result.rows[0].price;
+
+      if (req.session && req.session.cartId) {
+        return { price: price, cardId: req.session.cartId };
+      }
+
+      const insertSql = `
+      insert into "carts" ("cartId", "createdAt")
+      values (default, default)
+      returning "cartId"
+      `;
+      return Promise.resolve(db.query(insertSql)
+        .then(insertResult => {
+          return (
+            console.log('insertResult here', insertResult),
+            { price: price, cartId: insertResult.rows[0].cartId });
+        }
+        ));
+    })
+    .then(cartIdPriceResult => {
+      req.session.cartId = cartIdPriceResult.cartId;
+      const insertCartItemSql = `
+      insert into "cartItems" ("cartId", "productId", "price")
+      values ($1, $2, $3)
+      returning "cartItemId"
+      `;
+      const values = [req.session.cartId, req.body.productId, result.price];
+    }
+    )
+    .then()
     .catch(err => {
       next(err);
     });

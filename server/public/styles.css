@@ -58,3 +58,7 @@
   border: darkgrey 1px solid;
   box-shadow: 3px 3px 3px 3px gray;
 }
+
+.pointer {
+  cursor: pointer;
+}
