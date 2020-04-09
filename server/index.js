@@ -107,25 +107,36 @@ app.post('/api/cart/', (req, res, next) => {
       if (result.rowCount === 0) {
         throw new ClientError('product not found', 400);
       }
+
       const price = result.rows[0].price;
+
       if (req.session && req.session.cartId) {
         return { price: price, cardId: req.session.cartId };
       }
+
       const insertSql = `
       insert into "carts" ("cartId", "createdAt")
       values (default, default)
       returning "cartId"
       `;
-      return {
-        price: price,
-        cartId: db.query(insertSql)
-          .then(insertResult => {
-            console.log('the insertResult here', insertResult);
-            return insertResult.insertId;
-          })
-      };
+      return Promise.resolve(db.query(insertSql)
+        .then(insertResult => {
+          return (
+            console.log('insertResult here', insertResult),
+            { price: price, cartId: insertResult.rows[0].cartId });
+        }
+        ));
     })
-    .then(cartIdPriceResult => console.log('the cartIdPriceResult here', cartIdPriceResult))
+    .then(cartIdPriceResult => {
+      req.session.cartId = cartIdPriceResult.cartId;
+      const insertCartItemSql = `
+      insert into "cartItems" ("cartId", "productId", "price")
+      values ($1, $2, $3)
+      returning "cartItemId"
+      `;
+      const values = [req.session.cartId, req.body.productId, result.price];
+    }
+    )
     .then()
     .catch(err => {
       next(err);
