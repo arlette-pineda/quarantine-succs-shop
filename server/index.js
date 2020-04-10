@@ -145,7 +145,7 @@ app.post('/api/cart/', (req, res, next) => {
       );
     })
     .then(result => {
-      const sql = `
+      const sqlAll = `
       select "c"."cartItemId",
       "c"."price",
       "p"."productId",
@@ -157,6 +157,11 @@ app.post('/api/cart/', (req, res, next) => {
       where "c"."cartItemId" = $1
       `;
       const value = [result.cartItemId];
+
+      return (
+        db.query(sqlAll, value)
+          .then(result => res.status(201).json(result.rows[0]))
+      );
     })
     .catch(err => {
       next(err);
