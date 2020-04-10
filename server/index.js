@@ -134,9 +134,16 @@ app.post('/api/cart/', (req, res, next) => {
       values ($1, $2, $3)
       returning "cartItemId"
       `;
-      const values = [req.session.cartId, req.body.productId, result.price];
-    }
-    )
+      const values = [req.session.cartId, req.body.productId, cartIdPriceResult.price];
+
+      return (
+        db.query(insertCartItemSql, values)
+          .then(result => {
+            const cartItemId = result.rows[0];
+            return cartItemId;
+          })
+      );
+    })
     .then()
     .catch(err => {
       next(err);
