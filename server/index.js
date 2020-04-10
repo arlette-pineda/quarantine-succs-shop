@@ -102,6 +102,7 @@ app.post('/api/cart/', (req, res, next) => {
   where "products"."productId" = $1
   `;
   const value = [productId];
+
   db.query(sql, value)
     .then(result => {
       if (result.rowCount === 0) {
