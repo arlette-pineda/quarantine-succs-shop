@@ -102,6 +102,7 @@ app.post('/api/cart/', (req, res, next) => {
   where "products"."productId" = $1
   `;
   const value = [productId];
+
   db.query(sql, value)
     .then(result => {
       if (result.rowCount === 0) {
@@ -134,10 +135,35 @@ app.post('/api/cart/', (req, res, next) => {
       values ($1, $2, $3)
       returning "cartItemId"
       `;
-      const values = [req.session.cartId, req.body.productId, result.price];
-    }
-    )
-    .then()
+      const values = [req.session.cartId, req.body.productId, cartIdPriceResult.price];
+
+      return (
+        db.query(insertCartItemSql, values)
+          .then(result => {
+            const cartItemId = result.rows[0];
+            return cartItemId;
+          })
+      );
+    })
+    .then(result => {
+      const sqlAll = `
+      select "c"."cartItemId",
+      "c"."price",
+      "p"."productId",
+      "p"."image",
+      "p"."name",
+      "p"."shortDescription"
+      from "cartItems" as "c"
+      join "products" as "p" using ("productId")
+      where "c"."cartItemId" = $1
+      `;
+      const value = [result.cartItemId];
+
+      return (
+        db.query(sqlAll, value)
+          .then(result => res.status(201).json(result.rows[0]))
+      );
+    })
     .catch(err => {
       next(err);
     });
