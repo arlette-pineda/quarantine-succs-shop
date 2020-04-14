@@ -71,6 +71,9 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 // GET cart
 app.get('/api/cart', (req, res, next) => {
+  if (!req.session.cartId) {
+    return [];
+  } else {
   const sql = `
   select "c"."cartItemId",
        "c"."price",
@@ -82,6 +85,9 @@ app.get('/api/cart', (req, res, next) => {
   join "products" as "p" using ("productId")
  where "c"."cartId" = $1
   `;
+
+  const value =[req.session.cartId];
+
   db.query(sql)
     .then(result => {
       res.status(200).json(result.rows);
