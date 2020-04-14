@@ -74,7 +74,7 @@ app.get('/api/cart', (req, res, next) => {
   if (!req.session.cartId) {
     return [];
   } else {
-  const sql = `
+    const sql = `
   select "c"."cartItemId",
        "c"."price",
        "p"."productId",
@@ -86,18 +86,19 @@ app.get('/api/cart', (req, res, next) => {
  where "c"."cartId" = $1
   `;
 
-  const value =[req.session.cartId];
+    const value = [req.session.cartId];
 
-  db.query(sql)
-    .then(result => {
-      res.status(200).json(result.rows);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({
-        error: 'An unexpected error occurred.'
+    db.query(sql, value)
+      .then(result => {
+        res.status(200).json(result.rows);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
       });
-    });
+  }
 });
 
 // POST to cart
