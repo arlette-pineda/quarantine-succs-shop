@@ -71,35 +71,48 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 // GET cart
 app.get('/api/cart', (req, res, next) => {
-  const sql = `
-  select *
-  from "carts"
+  if (!req.session.cartId) {
+    return [];
+  } else {
+    const sql = `
+    select "c"."cartItemId",
+        "c"."price",
+        "p"."productId",
+        "p"."image",
+        "p"."name",
+        "p"."shortDescription"
+    from "cartItems" as "c"
+    join "products" as "p" using ("productId")
+    where "c"."cartId" = $1
   `;
-  db.query(sql)
-    .then(result => {
-      res.status(200).json(result.rows);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({
-        error: 'An unexpected error occurred.'
+
+    const value = [req.session.cartId];
+
+    db.query(sql, value)
+      .then(result => {
+        res.status(200).json(result.rows);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
       });
-    });
+  }
 });
 
 // POST to cart
-app.post('/api/cart/', (req, res, next) => {
+app.post('/api/cart', (req, res, next) => {
   const productId = req.body.productId;
-  console.log('the product body here', productId);
   if (!parseInt(productId, 10)) {
     return res.status(400).json({
       error: 'Invalid productId, must be positive integer'
     });
   }
   const sql = `
-  select "price"
-  from "products"
-  where "products"."productId" = $1
+    select "price"
+    from "products"
+    where "products"."productId" = $1
   `;
   const value = [productId];
 
@@ -111,29 +124,30 @@ app.post('/api/cart/', (req, res, next) => {
 
       const price = result.rows[0].price;
 
-      if (req.session && req.session.cartId) {
-        return { price: price, cardId: req.session.cartId };
-      }
-
       const insertSql = `
-      insert into "carts" ("cartId", "createdAt")
-      values (default, default)
-      returning "cartId"
+        insert into "carts" ("cartId", "createdAt")
+        values (default, default)
+        returning "cartId"
       `;
-      return Promise.resolve(db.query(insertSql)
-        .then(insertResult => {
-          return (
-            console.log('insertResult here', insertResult),
-            { price: price, cartId: insertResult.rows[0].cartId });
-        }
-        ));
+
+      // if (req.session.cartId) {
+      //   return { cartId: req.session.cartId, price: price };
+      // } else {
+      return (
+        db.query(insertSql)
+          .then(insertResult => {
+            return { cartId: insertResult.rows[0].cartId, price: price };
+          })
+      );
+      // }
     })
     .then(cartIdPriceResult => {
       req.session.cartId = cartIdPriceResult.cartId;
+
       const insertCartItemSql = `
-      insert into "cartItems" ("cartId", "productId", "price")
-      values ($1, $2, $3)
-      returning "cartItemId"
+        insert into "cartItems" ("cartId", "productId", "price")
+        values ($1, $2, $3)
+        returning "cartItemId"
       `;
       const values = [req.session.cartId, req.body.productId, cartIdPriceResult.price];
 
