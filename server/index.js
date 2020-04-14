@@ -132,13 +132,15 @@ app.post('/api/cart', (req, res, next) => {
       }
     })
     .then(cartIdPriceResult => {
-      req.session.cartId = cartIdPriceResult.cartId;
+      const currCartId = cartIdPriceResult.retrievedCartId[0].cartId;
+      req.session.cartId = currCartId;
+
       const insertCartItemSql = `
         insert into "cartItems" ("cartId", "productId", "price")
         values ($1, $2, $3)
         returning "cartItemId"
       `;
-      const values = [req.session.cartId, req.body.productId, cartIdPriceResult.price];
+      const values = [currCartId, req.body.productId, cartIdPriceResult.price];
 
       return (
         db.query(insertCartItemSql, values)
