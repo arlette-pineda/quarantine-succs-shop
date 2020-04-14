@@ -88,7 +88,7 @@ app.get('/api/cart', (req, res, next) => {
 });
 
 // POST to cart
-app.post('/api/cart/', (req, res, next) => {
+app.post('/api/cart', (req, res, next) => {
   const productId = req.body.productId;
   console.log('the product body here', productId);
   if (!parseInt(productId, 10)) {
@@ -97,9 +97,9 @@ app.post('/api/cart/', (req, res, next) => {
     });
   }
   const sql = `
-  select "price"
-  from "products"
-  where "products"."productId" = $1
+    select "price"
+    from "products"
+    where "products"."productId" = $1
   `;
   const value = [productId];
 
@@ -111,29 +111,32 @@ app.post('/api/cart/', (req, res, next) => {
 
       const price = result.rows[0].price;
 
-      if (req.session && req.session.cartId) {
-        return { price: price, cardId: req.session.cartId };
-      }
-
       const insertSql = `
-      insert into "carts" ("cartId", "createdAt")
-      values (default, default)
-      returning "cartId"
+        insert into "carts" ("cartId", "createdAt")
+        values (default, default)
+        returning "cartId"
       `;
-      return Promise.resolve(db.query(insertSql)
-        .then(insertResult => {
-          return (
-            console.log('insertResult here', insertResult),
-            { price: price, cartId: insertResult.rows[0].cartId });
-        }
-        ));
+
+      if (req.session && req.session.cartId) {
+        const cartId = req.session.cartId;
+        const retrievedCartId = [{ cartId: cartId }];
+        return { cartId: retrievedCartId, price: price };
+      } else {
+        return (
+          db.query(insertSql)
+            .then(insertResult => {
+              const retrievedCartId = insertResult.rows;
+              return { cartId: retrievedCartId, price: price };
+            })
+        );
+      }
     })
     .then(cartIdPriceResult => {
       req.session.cartId = cartIdPriceResult.cartId;
       const insertCartItemSql = `
-      insert into "cartItems" ("cartId", "productId", "price")
-      values ($1, $2, $3)
-      returning "cartItemId"
+        insert into "cartItems" ("cartId", "productId", "price")
+        values ($1, $2, $3)
+        returning "cartItemId"
       `;
       const values = [req.session.cartId, req.body.productId, cartIdPriceResult.price];
 
@@ -141,6 +144,7 @@ app.post('/api/cart/', (req, res, next) => {
         db.query(insertCartItemSql, values)
           .then(result => {
             const cartItemId = result.rows[0];
+            console.log('cartiemid', cartItemId);
             return cartItemId;
           })
       );
