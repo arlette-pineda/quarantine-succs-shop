@@ -72,8 +72,15 @@ app.get('/api/products/:productId', (req, res, next) => {
 // GET cart
 app.get('/api/cart', (req, res, next) => {
   const sql = `
-  select *
-  from "carts"
+  select "c"."cartItemId",
+       "c"."price",
+       "p"."productId",
+       "p"."image",
+       "p"."name",
+       "p"."shortDescription"
+  from "cartItems" as "c"
+  join "products" as "p" using ("productId")
+ where "c"."cartId" = $1
   `;
   db.query(sql)
     .then(result => {
