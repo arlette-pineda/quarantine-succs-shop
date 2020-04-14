@@ -104,7 +104,6 @@ app.get('/api/cart', (req, res, next) => {
 // POST to cart
 app.post('/api/cart', (req, res, next) => {
   const productId = req.body.productId;
-  console.log('the productId body here', productId);
   if (!parseInt(productId, 10)) {
     return res.status(400).json({
       error: 'Invalid productId, must be positive integer'
@@ -137,8 +136,6 @@ app.post('/api/cart', (req, res, next) => {
       return (
         db.query(insertSql)
           .then(insertResult => {
-            console.log('insertTesutl', insertResult);
-            console.log('.row[0],', insertResult.rows[0]);
             return { cartId: insertResult.rows[0].cartId, price: price };
           })
       );
@@ -158,7 +155,6 @@ app.post('/api/cart', (req, res, next) => {
         db.query(insertCartItemSql, values)
           .then(result => {
             const cartItemId = result.rows[0];
-            console.log('cartiemid', cartItemId);
             return cartItemId;
           })
       );
