@@ -25,6 +25,10 @@ export default class App extends React.Component {
     });
   }
 
+  getCartItems() {
+
+  }
+
   render() {
 
     if (this.state.view.name === 'catalog') {
