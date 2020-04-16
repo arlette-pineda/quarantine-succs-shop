@@ -36,20 +36,25 @@ export default class App extends React.Component {
         cart: result
       }))
       .catch(error => console.error('error:', error.message));
-
+  }
 
   addToCart(product) {
     const req = {
-      method: "POST",
-      headers: { 'Content-Type': 'application/json'},
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(product)
-    }
-  }
-
+    };
+    fetch('/api/cart', req)
+      .then(res => res.json())
+      .then(cartItemsArray => this.setState({
+        cart: cartItemsArray
+      }))
+      .catch(err =>
+        console.error(err)
+      );
   }
 
   render() {
-
     if (this.state.view.name === 'catalog') {
       return (
         <div>
