@@ -19,3 +19,5 @@ function CartSummaryItem(props) {
     </div>
   );
 }
+
+export default CartSummaryItem;
