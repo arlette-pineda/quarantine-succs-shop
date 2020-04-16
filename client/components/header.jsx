@@ -6,9 +6,16 @@ class Header extends React.Component {
   }
 
   render() {
+    const cartItemCount = this.props.cartItemCount;
     return (
-      <div className="header">
-        <p>$ Wicked Sales</p>
+      <div className="container">
+        <div className="header">
+          <p>$ Wicked Sales</p>
+        </div>
+        <div>
+          <p className="m-2">{`${cartItemCount} items`}</p>
+          <i className="fas fa-shopping-cart fa-2x"></i>
+        </div>
       </div>
     );
   }
