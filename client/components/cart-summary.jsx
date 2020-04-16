@@ -19,6 +19,7 @@ function CartSummary(props) {
         }
         )
       }
+      <h3>Item Total $</h3>
     </div>
   );
 }
