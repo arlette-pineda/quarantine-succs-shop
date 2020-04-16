@@ -1,11 +1,17 @@
 import React from 'react';
 
-function Header(props) {
-  return (
-    <div className="header">
-      <p>$ Wicked Sales</p>
-    </div>
-  );
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="header">
+        <p>$ Wicked Sales</p>
+      </div>
+    );
+  }
 }
 
 export default Header;
