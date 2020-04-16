@@ -44,14 +44,14 @@ export default class App extends React.Component {
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <Header />,
+          <Header cartItemCount={this.state.cart} />,
           <ProductList setView={this.setView} view={this.state.view} />
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <div>
-          <Header />,
+          <Header cartItemCount={this.state.cart} />,
           <ProductDetails paramProp={this.state.view.params} setView={this.setView} />
         </div>
       );
