@@ -39,7 +39,11 @@ export default class App extends React.Component {
 
 
   addToCart(product) {
-
+    const req = {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(product)
+    }
   }
 
   }
