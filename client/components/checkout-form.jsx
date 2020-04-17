@@ -10,6 +10,24 @@ class CheckoutForm extends React.Component {
     };
   }
 
+  handleChangeName(event) {
+    this.setState({
+      name: event.target.value
+    });
+  }
+
+  handleChangeCard(event) {
+    this.setState({
+      creditCard: event.target.value
+    });
+  }
+
+  handleChangeAddress(event) {
+    this.setState({
+      shippingAddress: event.target.value
+    });
+  }
+
   render() {
     return (
       <div className="container">
