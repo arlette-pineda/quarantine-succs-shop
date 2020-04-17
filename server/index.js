@@ -207,7 +207,6 @@ app.post('/api/orders', (req, res, next) => {
 
   db.query(sql, values)
     .then(result => {
-      console.log('checking if rowCount', result);
       if (result.rowCount === 0) {
         throw new ClientError('order not found', 400);
       }
