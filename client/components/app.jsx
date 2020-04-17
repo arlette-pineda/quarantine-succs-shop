@@ -59,6 +59,14 @@ export default class App extends React.Component {
       );
   }
 
+  placeOrder(anObject) {
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(anObject)
+    };
+  }
+
   render() {
     if (this.state.view.name === 'catalog') {
       return (
