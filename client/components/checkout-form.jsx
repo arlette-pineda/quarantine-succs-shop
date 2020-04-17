@@ -8,6 +8,9 @@ class CheckoutForm extends React.Component {
       creditCard: '',
       shippingAddress: ''
     };
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeCard = this.handleChangeCard.bind(this);
+    this.handleChangeAddress = this.handleChangeAddress.bind(this);
   }
 
   handleChangeName(event) {
