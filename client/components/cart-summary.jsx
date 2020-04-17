@@ -13,7 +13,8 @@ function CartSummary(props) {
 
   return (
     <div className="container">
-      <h2>My Cart</h2>
+      <small className="row text-muted ml-2 mb-2 mt-4 pointer" onClick={() => this.props.setView('catalog', {})}> &lt;Back to catalog </small>
+      <h2 className="mt-2">My Cart</h2>
       {
         props.cart.map(cartItem => {
           return (

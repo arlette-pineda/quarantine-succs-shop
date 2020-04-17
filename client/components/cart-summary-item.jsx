@@ -2,8 +2,9 @@ import React from 'react';
 
 function CartSummaryItem(props) {
   return (
-    <div className="card">
+    <div className="card p-3 m-3">
       <div className="row">
+        <div className="col-md-4">
           <img className="img-details" src={props.image} />
         </div>
         <div className="col-md-8">
