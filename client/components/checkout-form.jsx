@@ -19,7 +19,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="customerName">Name</label>
             <input
-              // onChange={}
+              onChange={this.handleChangeName}
               className="form-control"
               type="text"
               id="customerName"
@@ -28,7 +28,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block" htmlFor="creditCard">Credit Card</label>
             <input
-              // onChange={}
+              onChange={this.handleChangeCard}
               className="form-control"
               type="text"
               id="creditCard"
@@ -37,7 +37,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg">
             <label className="d-block" htmlFor="shippingAddress">Shipping Address</label>
             <textarea
-              // onChange={}
+              onChange={this.handleChangeAddress}
               className="form-control"
               id="shippingAddress"
               required >
