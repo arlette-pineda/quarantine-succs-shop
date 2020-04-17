@@ -43,7 +43,7 @@ app.get('/api/products', (req, res, next) => {
 
 // GET products by ID
 app.get('/api/products/:productId', (req, res, next) => {
-  const { productId } = req.params;
+  const productId = req.params.productId;
   if (!parseInt(productId, 10)) {
     return res.status(400).json({
       error: '"productId" must be a positive integer'
@@ -61,7 +61,7 @@ app.get('/api/products/:productId', (req, res, next) => {
       if (!product) {
         next();
       } else {
-        res.json(product);
+        return res.status(200).json(product);
       }
     })
     .catch(err => {
@@ -71,10 +71,7 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 // GET cart
 app.get('/api/cart', (req, res, next) => {
-  if (!req.session.cartId) {
-    return [];
-  } else {
-    const sql = `
+  const sql = `
     select "c"."cartItemId",
         "c"."price",
         "p"."productId",
@@ -86,18 +83,23 @@ app.get('/api/cart', (req, res, next) => {
     where "c"."cartId" = $1
   `;
 
-    const value = [req.session.cartId];
+  const value = [req.session.cartId];
 
-    db.query(sql, value)
-      .then(result => {
-        res.status(200).json(result.rows);
-      })
-      .catch(err => {
-        console.error(err);
-        res.status(500).json({
-          error: 'An unexpected error occurred.'
-        });
-      });
+  if (!req.session.cartId) {
+    return res.json([]);
+  } else {
+    return (
+      db.query(sql, value)
+        .then(result => {
+          res.status(200).json(result.rows);
+        })
+        .catch(err => {
+          console.error(err);
+          res.status(500).json({
+            error: 'An unexpected error occurred.'
+          });
+        })
+    );
   }
 });
 
@@ -130,16 +132,12 @@ app.post('/api/cart', (req, res, next) => {
         returning "cartId"
       `;
 
-      // if (req.session.cartId) {
-      //   return { cartId: req.session.cartId, price: price };
-      // } else {
       return (
         db.query(insertSql)
           .then(insertResult => {
             return { cartId: insertResult.rows[0].cartId, price: price };
           })
       );
-      // }
     })
     .then(cartIdPriceResult => {
       req.session.cartId = cartIdPriceResult.cartId;
@@ -177,6 +175,45 @@ app.post('/api/cart', (req, res, next) => {
         db.query(sqlAll, value)
           .then(result => res.status(201).json(result.rows[0]))
       );
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
+// POST to orders
+app.post('/api/orders', (req, res, next) => {
+  const order = req.body;
+
+  if (!req.session.cartId) {
+    return res.status(400).json({
+      error: 'Invalid cartId'
+    });
+  }
+
+  if (!order.name || !order.creditCard || !order.shippingAddress) {
+    return res.status(400).json({
+      error: 'fields name, credit card, and address are required'
+    });
+  }
+
+  const sql = `
+    insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
+    values ($1, $2, $3, $4)
+    returning *
+  `;
+
+  const values = [req.session.cartId, order.name, order.creditCard, order.shippingAddress];
+
+  db.query(sql, values)
+    .then(result => {
+      if (result.rowCount === 0) {
+        throw new ClientError('order not found', 400);
+      }
+      if (req.session.cartId) {
+        delete req.session.cartId;
+        return res.status(201).json(result.rows[0]);
+      }
     })
     .catch(err => {
       next(err);
