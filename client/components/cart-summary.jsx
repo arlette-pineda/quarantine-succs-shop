@@ -19,10 +19,10 @@ function CartSummary(props) {
           return (
             <CartSummaryItem
               key={cartItem.cartItemId}
-              image={cartItem.image}
               itemName={cartItem.name}
               price={cartItem.price}
               shortDesc={cartItem.shortDescription}
+              image={cartItem.image}
             />
           );
         }
