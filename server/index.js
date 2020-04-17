@@ -43,7 +43,7 @@ app.get('/api/products', (req, res, next) => {
 
 // GET products by ID
 app.get('/api/products/:productId', (req, res, next) => {
-  const { productId } = req.params;
+  const productId = req.params.productId;
   if (!parseInt(productId, 10)) {
     return res.status(400).json({
       error: '"productId" must be a positive integer'
@@ -61,7 +61,7 @@ app.get('/api/products/:productId', (req, res, next) => {
       if (!product) {
         next();
       } else {
-        res.json(product);
+        return res.status(200).json(product);
       }
     })
     .catch(err => {
@@ -71,10 +71,7 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 // GET cart
 app.get('/api/cart', (req, res, next) => {
-  if (!req.session.cartId) {
-    return [];
-  } else {
-    const sql = `
+  const sql = `
     select "c"."cartItemId",
         "c"."price",
         "p"."productId",
@@ -86,18 +83,23 @@ app.get('/api/cart', (req, res, next) => {
     where "c"."cartId" = $1
   `;
 
-    const value = [req.session.cartId];
+  const value = [req.session.cartId];
 
-    db.query(sql, value)
-      .then(result => {
-        res.status(200).json(result.rows);
-      })
-      .catch(err => {
-        console.error(err);
-        res.status(500).json({
-          error: 'An unexpected error occurred.'
-        });
-      });
+  if (!req.session.cartId) {
+    return res.json([]);
+  } else {
+    return (
+      db.query(sql, value)
+        .then(result => {
+          res.status(200).json(result.rows);
+        })
+        .catch(err => {
+          console.error(err);
+          res.status(500).json({
+            error: 'An unexpected error occurred.'
+          });
+        })
+    );
   }
 });
 
@@ -204,18 +206,16 @@ app.post('/api/orders', (req, res, next) => {
   const values = [req.session.cartId, order.name, order.creditCard, order.shippingAddress];
 
   db.query(sql, values)
-    .then(result  =>
+    .then(result => {
       console.log('checking if rowCount', result);
       if (result.rowCount === 0) {
         throw new ClientError('order not found', 400);
       }
       if (req.session.cartId) {
         delete req.session.cartId;
-        return res.status(201).json({
-          result.rows[0]
-        });
+        return res.status(201).json(result.rows[0]);
       }
-    )
+    });
 });
 
 app.use('/api', (req, res, next) => {
