@@ -215,6 +215,9 @@ app.post('/api/orders', (req, res, next) => {
         delete req.session.cartId;
         return res.status(201).json(result.rows[0]);
       }
+    })
+    .catch(err => {
+      next(err);
     });
 });
 
