@@ -201,6 +201,8 @@ app.post('/api/orders', (req, res, next) => {
     returning *
   `;
 
+  const values = [req.session.cartId, order.name, order.creditCard, order.shippingAddress];
+
 });
 
 app.use('/api', (req, res, next) => {
