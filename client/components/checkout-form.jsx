@@ -43,6 +43,10 @@ class CheckoutForm extends React.Component {
               required >
             </textarea>
           </div>
+          <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
+            <small className="text-muted"> &lt; Continue Shopping</small>
+            <button type="submit" className="btn btn-primary">Place Order</button>
+          </div>
         </form>
       </div>
     );
