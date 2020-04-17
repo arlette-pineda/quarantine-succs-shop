@@ -61,11 +61,11 @@ export default class App extends React.Component {
       );
   }
 
-  placeOrder(anObject) {
+  placeOrder(orderObject) {
     fetch('/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(anObject)
+      body: JSON.stringify(orderObject)
     })
       .then(response => response.json())
       .then(orderResult => {

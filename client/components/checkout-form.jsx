@@ -13,6 +13,16 @@ class CheckoutForm extends React.Component {
     this.handleChangeAddress = this.handleChangeAddress.bind(this);
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    const orderObject = {
+      name: this.state.name,
+      creditCard: this.state.creditCard,
+      shippingAddress: this.state.shippingAddress
+    };
+    this.props.placeOrder(orderObject);
+  }
+
   handleChangeName(event) {
     this.setState({
       name: event.target.value
