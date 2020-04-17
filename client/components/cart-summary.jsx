@@ -11,7 +11,7 @@ function CartSummary(props) {
   if (props.cart.length === 0) {
     return (
       <div>
-        <p>You haven&#39;t added anything yet!</p>
+        <p>You havent added anything yet!</p>
       </div>
     );
   }
