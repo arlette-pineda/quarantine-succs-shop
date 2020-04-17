@@ -108,7 +108,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />,
-          <CheckoutForm placeOrder={this.placeOrder} setView={this.setView} />
+          <CheckoutForm cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView} />
         </div>
       );
     }

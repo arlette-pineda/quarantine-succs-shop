@@ -11,6 +11,15 @@ class CheckoutForm extends React.Component {
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeCard = this.handleChangeCard.bind(this);
     this.handleChangeAddress = this.handleChangeAddress.bind(this);
+    this.getTotal = this.getTotal.bind(this);
+  }
+
+  getTotal() {
+    const initialValue = 0;
+    const total = this.props.cart.reduce((accum, currV) => {
+      return accum + currV.price;
+    }, initialValue);
+    return (total / 100).toFixed(2);
   }
 
   handleSubmit(event) {
@@ -21,6 +30,7 @@ class CheckoutForm extends React.Component {
       shippingAddress: this.state.shippingAddress
     };
     this.props.placeOrder(orderObject);
+
   }
 
   handleChangeName(event) {
@@ -45,7 +55,7 @@ class CheckoutForm extends React.Component {
     return (
       <div className="container">
         <h3 className="mb-4">My Cart</h3>
-        <small className="text-muted">Order Total: $XX.xx</small>
+        <small className="text-muted">Order Total: ${this.getTotal()}</small>
         <form onSubmit={this.handleSubmit}>
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="customerName">Name</label>
