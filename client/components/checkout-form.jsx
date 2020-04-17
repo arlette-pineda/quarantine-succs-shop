@@ -16,7 +16,7 @@ class CheckoutForm extends React.Component {
         <h3 className="mb-4">My Cart</h3>
         <small className="text-muted">Order Total: $XX.xx</small>
         <form>
-          <div className="input-group-lg mb-2">
+          <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="customerName">Name</label>
             <input
               // onChange={}
@@ -25,7 +25,7 @@ class CheckoutForm extends React.Component {
               id="customerName"
               required />
           </div>
-          <div className="input-group-lg mb-2">
+          <div className="input-group-lg mb-3">
             <label className="d-block" htmlFor="creditCard">Credit Card</label>
             <input
               // onChange={}
@@ -34,7 +34,7 @@ class CheckoutForm extends React.Component {
               id="creditCard"
               required />
           </div>
-          <div className="input-group-lg mb-2">
+          <div className="input-group-lg">
             <label className="d-block" htmlFor="shippingAddress">Shipping Address</label>
             <textarea
               // onChange={}
