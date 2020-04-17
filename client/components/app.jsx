@@ -47,7 +47,7 @@ export default class App extends React.Component {
       body: JSON.stringify(product)
     };
     fetch('/api/cart', req)
-      .then(res => res.json())
+      .then(response => response.json())
       .then(cartItem => {
         const allItems = this.state.cart.concat(cartItem);
         this.setState({
@@ -60,11 +60,24 @@ export default class App extends React.Component {
   }
 
   placeOrder(anObject) {
-    const req = {
+    fetch('/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(anObject)
-    };
+    })
+      .then(response => response.json())
+      .then(orderResult => {
+        this.setState({
+          view: {
+            name: 'catalog',
+            params: {}
+          },
+          cart: []
+        });
+      })
+      .catch(err =>
+        console.error(err)
+      );
   }
 
   render() {
