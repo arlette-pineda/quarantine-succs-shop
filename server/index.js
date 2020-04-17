@@ -203,6 +203,19 @@ app.post('/api/orders', (req, res, next) => {
 
   const values = [req.session.cartId, order.name, order.creditCard, order.shippingAddress];
 
+  db.query(sql, values)
+    .then(result  =>
+      console.log('checking if rowCount', result);
+      if (result.rowCount === 0) {
+        throw new ClientError('order not found', 400);
+      }
+      if (req.session.cartId) {
+        delete req.session.cartId;
+        return res.status(201).json({
+          result.rows[0]
+        });
+      }
+    )
 });
 
 app.use('/api', (req, res, next) => {
