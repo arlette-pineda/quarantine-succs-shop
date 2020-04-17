@@ -130,16 +130,12 @@ app.post('/api/cart', (req, res, next) => {
         returning "cartId"
       `;
 
-      // if (req.session.cartId) {
-      //   return { cartId: req.session.cartId, price: price };
-      // } else {
       return (
         db.query(insertSql)
           .then(insertResult => {
             return { cartId: insertResult.rows[0].cartId, price: price };
           })
       );
-      // }
     })
     .then(cartIdPriceResult => {
       req.session.cartId = cartIdPriceResult.cartId;
@@ -181,6 +177,15 @@ app.post('/api/cart', (req, res, next) => {
     .catch(err => {
       next(err);
     });
+});
+
+// POST to orders
+app.post('/api/orders', (req, res, next) => {
+  if (!req.session.cartId) {
+    return res.status(400).json({
+      error: 'Invalid cartId'
+    });
+  }
 });
 
 app.use('/api', (req, res, next) => {
