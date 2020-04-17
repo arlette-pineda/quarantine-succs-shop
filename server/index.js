@@ -181,11 +181,20 @@ app.post('/api/cart', (req, res, next) => {
 
 // POST to orders
 app.post('/api/orders', (req, res, next) => {
+  const order = req.body;
+
   if (!req.session.cartId) {
     return res.status(400).json({
       error: 'Invalid cartId'
     });
   }
+
+  if (!order.name || !order.creditCard || !order.shippingAddress) {
+    return res.status(400).json({
+      error: 'fields name, credit card, and address are required'
+    });
+  }
+
 });
 
 app.use('/api', (req, res, next) => {
