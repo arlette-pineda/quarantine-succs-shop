@@ -2,17 +2,16 @@ import React from 'react';
 
 function CartSummaryItem(props) {
   return (
-    <div className="card">
+    <div className="card p-3 m-3 prod-details-style">
       <div className="row">
-        <div className="">
-          <img src="" alt=""/>
-          Card Image Here
+        <div className="col-md-4">
+          <img className="img-details" src={props.image} />
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h3 className="card-title">Item Name</h3>
-            <p className="card-text">Price Here</p>
-            <p className="card-text">Short Description Here. Short Description Here. Short Description Here. Short Description Here.</p>
+            <h3 className="card-title">{props.itemName}</h3>
+            <p className="card-text text-muted" >${(props.price / 100).toFixed(2)}</p>
+            <p className="card-subtitle">{props.shortDesc}</p>
           </div>
         </div>
       </div>

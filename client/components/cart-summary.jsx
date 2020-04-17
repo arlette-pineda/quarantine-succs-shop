@@ -2,6 +2,11 @@ import React from 'react';
 import CartSummaryItem from './cart-summary-item';
 
 function CartSummary(props) {
+  const initialValue = 0;
+  const total = props.cart.reduce((accum, currV) => {
+    return accum + currV.price;
+  }, initialValue);
+  const cartTotal = (total / 100).toFixed(2);
 
   if (props.cart.length === 0) {
     return (
@@ -13,22 +18,26 @@ function CartSummary(props) {
 
   return (
     <div className="container">
-      <h2>My Cart</h2>
+      <small className="row text-muted ml-2 mb-2 mt-2 pointer"
+        onClick={() => props.setView('catalog', {})}>
+        &lt;Back to catalog
+      </small>
+      <h2 className="mt-2">My Cart</h2>
       {
         props.cart.map(cartItem => {
           return (
             <CartSummaryItem
               key={cartItem.cartItemId}
-              image={cartItem.image}
               itemName={cartItem.name}
               price={cartItem.price}
               shortDesc={cartItem.shortDescription}
+              image={cartItem.image}
             />
           );
         }
         )
       }
-      <h3>Item Total $ x</h3>
+      <h3 className="m-4">Item Total ${cartTotal}</h3>
     </div>
   );
 }
