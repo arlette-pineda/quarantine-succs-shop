@@ -15,7 +15,7 @@ class CheckoutForm extends React.Component {
       <div className="container">
         <h3 className="mb-4">My Cart</h3>
         <small className="text-muted">Order Total: $XX.xx</small>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="customerName">Name</label>
             <input
