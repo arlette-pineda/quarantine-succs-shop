@@ -22,3 +22,11 @@ Try the app live [here](https://wicked-sales.arlettepineda.com/)
 - Users can add products to cart
 - Users can view their cart summary
 - Users can go to checkout and place order
+
+## Preview
+
+## Development
+- Node.js 10 or higher
+- NPM 6 or higher
+- Express 4 or higher
+- PostgreSQL 10 or higher
