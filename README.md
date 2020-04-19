@@ -25,8 +25,31 @@ Try the app live [here](https://wicked-sales.arlettepineda.com/)
 
 ## Preview
 
-## Development
+### Development
 - Node.js 10 or higher
 - NPM 6 or higher
 - Express 4 or higher
 - PostgreSQL 10 or higher
+
+### Getting Started
+
+1. Instr here
+  ```javascript
+    code here
+  ```
+2. Instr here
+  ```javascript
+    code here
+  ```
+3. Instr here
+  ```javascript
+    code here
+  ```
+4. Instr here
+  ```javascript
+    code here
+  ```
+5. Instr here
+  ```javascript
+    code here
+  ```
