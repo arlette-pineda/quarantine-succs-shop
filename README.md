@@ -1,14 +1,17 @@
 # Wicked Sales Shopping Cart
-A full stack Node.js and React shopping cart app. 
+A full stack Node.js and React shopping cart app.
 
 ## Technologies Used
 - React.js
 - Node.js
 - Express
-- PostgreSQL 
+- PostgreSQL
 - Bootstrap 4
-- Webpack 
+- Webpack
 - CSS3
 - HTML5
-- FontAwesome 
-- Babel 
+- FontAwesome
+- Babel
+
+## Live Demo
+Try the app live [here](https://wicked-sales.arlettepineda.com/)
