@@ -5,13 +5,13 @@ function Header(props) {
   const setView = props.setView;
 
   return (
-    <div className="row p-2 header-style d-flex">
-      <div className="col-9">
-        <div>
-          <p className="ml-5 pl-5">$ Wicked Sales</p>
+    <div className="row p-2 header-style ">
+      <div className="col-md-9  d-flex">
+        <div className="ml-5 pl-5">
+          <h2 className="">$ Wicked Sales</h2>
         </div>
       </div>
-      <div className="col-3 d-flex pointer"
+      <div className="col-md-3 d-flex pointer"
         onClick={() => setView('cart', {})}>
         <p className="m-2">{`${cartItemCount} items`}</p>
         <i className="fas fa-shopping-cart fa-2x"></i>
