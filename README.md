@@ -24,6 +24,8 @@ Try the app live [here](https://wicked-sales.arlettepineda.com/)
 - Users can go to checkout and place order
 
 ## Preview
+![Wicked Sales Preview Add to Cart](AddtoCart.gif "Wicked Sales add to cart preview")
+![Wicked Sales Preview Checkout](Checkout.gif "Wicked Sales checkout preview")
 
 ### Development
 - Node.js 10 or higher
