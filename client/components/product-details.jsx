@@ -25,14 +25,14 @@ class ProductDetails extends React.Component {
   render() {
     if (this.state.product != null) {
       return (
-        <div className="container prod-details-style col-7">
+        <div className="container prod-details-style col-md-7">
           <small className="row text-muted ml-2 mb-2 mt-4 pointer" onClick={() => this.props.setView('catalog', {})}> &lt;Back to catalog </small>
-          <div className="row" id="for-body-div">
-            <img className="col-5 d-inline img-details" src={this.state.product.image} />
-            <div className="col-7" id="div-for-name-shortdes-price">
-              <h2 className="">{this.state.product.name}</h2>
-              <div className=" card-subtitle text-muted">${(this.state.product.price / 100).toFixed(2)}</div>
-              <div className="">
+          <div className="row">
+            <img className="col-5 d-inline img-style img-fluid" src={this.state.product.image} />
+            <div className="col-7 card-body">
+              <h2>{this.state.product.name}</h2>
+              <div className="card-subtitle text-muted">${(this.state.product.price / 100).toFixed(2)}</div>
+              <div className="card-text">
                 {this.state.product.shortDescription}
               </div>
               <button onClick={() => this.props.addToCart(this.state.product)}
