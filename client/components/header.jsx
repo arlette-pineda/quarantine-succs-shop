@@ -5,7 +5,7 @@ function Header(props) {
   const setView = props.setView;
 
   return (
-    <div className="container-lg p-2 d-flex header-style ">
+    <div className="container-lg p-2 d-flex header-style">
       <div className="d-inline">
         <h2 className="">$ Wicked Sales</h2>
       </div>
