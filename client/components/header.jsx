@@ -7,14 +7,14 @@ function Header(props) {
   return (
     <div className="container-lg p-2 px-4 d-flex header-style">
       <div className="d-inline">
-        <h2 className="pointer"
+        <h2 className="hover"
           onClick={() => props.setView('catalog', {})}>
             $ Wicked Sales</h2>
       </div>
       <div className="d-inline d-flex ml-auto pointer"
         onClick={() => setView('cart', {})}>
         <p className="m-2">{`${cartItemCount} items`}</p>
-        <i className="fas fa-shopping-cart fa-2x"></i>
+        <i className="fas fa-shopping-cart fa-2x hover"></i>
       </div>
     </div>
   );
