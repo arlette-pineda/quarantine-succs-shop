@@ -35,23 +35,32 @@ Try the app live [here](https://wicked-sales.arlettepineda.com/)
 
 ### Getting Started
 
-1. Instr here
-  ```javascript
-    code here
+1. Clone the repository.
   ```
-2. Instr here
-  ```javascript
-    code here
+    git clone https://github.com/arlette-pineda/wicked-sales-js
   ```
-3. Instr here
-  ```javascript
-    code here
+2. Change directories to folder.
   ```
-4. Instr here
-  ```javascript
-    code here
+    cd wicked-sales-js
   ```
-5. Instr here
-  ```javascript
-    code here
+3. Install dependencies with NPM.
   ```
+     npm install
+  ```
+4. Start PostgreSQL server.
+  ```
+     sudo service postgresql start
+  ```
+5. Create database.
+  ```
+     createdb wickedSales
+  ```
+6. Import database to PostgreSQL.
+  ```
+    npm run db:import
+  ```
+7. You many now start the project. It can be viewed by going to http://localhost:3000 in your browser. 
+  ```javascript
+    npm run dev 
+  ```
+
