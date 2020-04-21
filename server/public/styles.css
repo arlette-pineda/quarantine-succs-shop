@@ -7,6 +7,7 @@
   width: 100%;
   max-height: 300px;
   object-fit: contain;
+  padding: 1px;
 }
 
 .img-details {
@@ -22,4 +23,18 @@
 
 .pointer {
   cursor: pointer;
+
+}
+
+.hover:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.glow:hover {
+  text-shadow: 1px 1px 1px ivory;
+  cursor: pointer;
+  /* box-shadow: 0 5px 15px rgba(145, 92, 182, .4); */
 }
