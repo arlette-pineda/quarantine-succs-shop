@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <div className="container-lg p-2 px-4 d-flex header-style mb-4">
       <div className="d-inline">
-        <h2 className="hover"
+        <h2 className="glow"
           onClick={() => props.setView('catalog', {})}>
             $ Wicked Sales</h2>
       </div>
