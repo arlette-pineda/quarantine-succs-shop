@@ -21,6 +21,10 @@
   box-shadow: 3px 3px 3px 3px gray;
 }
 
+.box {
+  border: darkgrey 1px solid;
+}
+
 .pointer {
   cursor: pointer;
 }

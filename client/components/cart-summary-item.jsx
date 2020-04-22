@@ -2,7 +2,7 @@ import React from 'react';
 
 function CartSummaryItem(props) {
   return (
-    <div className="card p-3 m-3 prod-details-style">
+    <div className="card p-3 m-3 box mb-4">
       <div className="row">
         <div className="col-md-4">
           <img className="img-details" src={props.image} />
