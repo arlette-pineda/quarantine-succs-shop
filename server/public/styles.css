@@ -1,7 +1,6 @@
 .header-style {
   background-color: rgb(198, 176, 34);
   color: white;
-
 }
 
 .img-style {
@@ -45,9 +44,10 @@
     border: none;
     box-shadow: none;
   }
-
-  /* .img-style {
-    padding-left: 1%;
-    padding-right: 1%;
-  } */
+  .shrink {
+    font-size: 4vh;
+  }
+  .items {
+    padding-bottom: 10%;
+  }
 }
