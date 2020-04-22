@@ -5,7 +5,7 @@ function Header(props) {
   const setView = props.setView;
 
   return (
-    <div className="container-lg p-2 px-4 d-flex header-style pt-4 mb-5">
+    <div className="container-lg px-4 d-flex header-style pt-4 mb-5">
       <div className="d-inline">
         <h2 className="glow"
           onClick={() => props.setView('catalog', {})}>
