@@ -14,7 +14,7 @@ function Header(props) {
       <div className="d-inline d-flex ml-auto pointer"
         onClick={() => setView('cart', {})}>
         <p className="m-2">{`${cartItemCount} items`}</p>
-        <i className="fas fa-shopping-cart fa-2x hover"></i>
+        <i className="fas fa-shopping-cart fa-2x glow"></i>
       </div>
     </div>
   );
