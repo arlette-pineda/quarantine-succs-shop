@@ -57,7 +57,7 @@ class CheckoutForm extends React.Component {
       <div className="container">
         <h3 className="mb-4">My Cart</h3>
         <small className="text-muted">Order Total: ${this.getTotal()}</small>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} autoComplete="off">
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="customerName">Name</label>
             <input
@@ -73,7 +73,7 @@ class CheckoutForm extends React.Component {
             <input
               onChange={this.handleChangeCard}
               className="form-control"
-              placeholder="xxxx-xxxx-xxxx-xxxx"
+              placeholder="xxxx xxxx xxxx xxxx"
               type="text"
               id="creditCard"
               required />
