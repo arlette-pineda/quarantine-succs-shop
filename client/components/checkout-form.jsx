@@ -63,6 +63,7 @@ class CheckoutForm extends React.Component {
             <input
               onChange={this.handleChangeName}
               className="form-control"
+              placeholder="John Smith"
               type="text"
               id="customerName"
               required />
@@ -72,6 +73,7 @@ class CheckoutForm extends React.Component {
             <input
               onChange={this.handleChangeCard}
               className="form-control"
+              placeholder="xxxx-xxxx-xxxx-xxxx"
               type="text"
               id="creditCard"
               required />
@@ -81,6 +83,7 @@ class CheckoutForm extends React.Component {
             <textarea
               onChange={this.handleChangeAddress}
               className="form-control"
+              placeholder="Street, City, State, Zip Code"
               id="shippingAddress"
               required >
             </textarea>
