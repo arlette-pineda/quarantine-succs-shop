@@ -14,7 +14,7 @@ A full stack Node.js and React shopping cart app.
 - Babel
 
 ## Live Demo
-Try the app live [here](https://wicked-sales.arlettepineda.com/)
+Try the app live [here!](https://wicked-sales.arlettepineda.com/)
 
 ## Features
 - Users can view list of all products
@@ -24,8 +24,8 @@ Try the app live [here](https://wicked-sales.arlettepineda.com/)
 - Users can go to checkout and place order
 
 ## Preview
-![Wicked Sales Preview Add to Cart](addtoCartPreview.gif "Wicked Sales add to cart preview")
-![Wicked Sales Preview Checkout](Checkout.gif "Wicked Sales checkout preview")
+![Wicked Sales Preview Add to Cart](addToCart.gif "Wicked Sales add to cart preview")
+![Wicked Sales Preview Checkout](checkoutPreview.gif "Wicked Sales checkout preview")
 
 ### Development
 - Node.js 10 or higher
