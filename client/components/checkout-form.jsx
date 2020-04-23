@@ -89,7 +89,7 @@ class CheckoutForm extends React.Component {
             </textarea>
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
-            <small className="text-muted pointer"
+            <small className="back"
               onClick={() => this.props.setView('catalog', {})}>
               &lt; Continue Shopping
             </small>

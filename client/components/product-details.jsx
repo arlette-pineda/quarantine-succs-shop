@@ -26,7 +26,7 @@ class ProductDetails extends React.Component {
     if (this.state.product != null) {
       return (
         <div className="container prod-details-style col-md-7 mb-4">
-          <small className="row text-muted ml-2 mb-2 mt-4 pointer" onClick={() => this.props.setView('catalog', {})}> &lt;Back to catalog </small>
+          <small className="row ml-2 mb-2 mt-4 back" onClick={() => this.props.setView('catalog', {})}> &lt;Back to catalog </small>
           <div className="row">
             <img className="col-5 d-inline img-style pl-4" src={this.state.product.image} />
             <div className="col-7 card-body">

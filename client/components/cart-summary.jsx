@@ -11,7 +11,7 @@ function CartSummary(props) {
   if (props.cart.length === 0) {
     return (
       <div className="mx-3">
-        <small className="row text-muted ml-2 mb-2 mt-2 pointer"
+        <small className="row back ml-2 mb-2 mt-2 pointer"
           onClick={() => props.setView('catalog', {})}>
           &lt;Back to catalog
         </small>
@@ -22,7 +22,7 @@ function CartSummary(props) {
 
   return (
     <div className="container">
-      <small className="row text-muted ml-2 mb-2 mt-2 pointer"
+      <small className="row ml-2 mb-2 mt-2 back"
         onClick={() => props.setView('catalog', {})}>
         &lt;Back to catalog
       </small>
