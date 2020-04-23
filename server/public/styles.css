@@ -31,15 +31,13 @@
   width: 35%;
 }
 
-
-
 @media (hover: hover) {
   .hover:hover {
     cursor: pointer;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-}
+  }
 
   .glow:hover {
   text-shadow: ivory 1px 0 10px;
