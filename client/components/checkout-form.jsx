@@ -63,6 +63,7 @@ class CheckoutForm extends React.Component {
             <input
               onChange={this.handleChangeName}
               className="form-control"
+              placeholder="John Smith"
               type="text"
               id="customerName"
               required />
@@ -72,6 +73,7 @@ class CheckoutForm extends React.Component {
             <input
               onChange={this.handleChangeCard}
               className="form-control"
+              placeholder="xxxx-xxxx-xxxx-xxxx"
               type="text"
               id="creditCard"
               required />
@@ -81,16 +83,17 @@ class CheckoutForm extends React.Component {
             <textarea
               onChange={this.handleChangeAddress}
               className="form-control"
+              placeholder="Street, City, State, Zip Code"
               id="shippingAddress"
               required >
             </textarea>
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
-            <small className="text-muted pointer"
+            <small className="back"
               onClick={() => this.props.setView('catalog', {})}>
               &lt; Continue Shopping
             </small>
-            <button type="submit" className="btn btn-primary">Place Order</button>
+            <button type="submit" className="btn btn-primary mb-5">Place Order</button>
           </div>
         </form>
       </div>

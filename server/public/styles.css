@@ -25,21 +25,29 @@
   border: darkgrey 1px solid;
 }
 
-.pointer {
-  cursor: pointer;
+.back {
+  color: dimgray;
+  font-size: 0.7rem;
+  width: 35%;
 }
 
-.hover:hover {
+@media (hover: hover) {
+  .hover:hover {
     cursor: pointer;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-}
+  }
 
-@media (hover: hover) {
   .glow:hover {
   text-shadow: ivory 1px 0 10px;
   cursor: pointer;
+  }
+
+  .back:hover {
+    text-decoration: #a81005 underline;
+    color: #a81005;
+    cursor: pointer;
   }
 }
 
