@@ -90,7 +90,7 @@ class CheckoutForm extends React.Component {
               onClick={() => this.props.setView('catalog', {})}>
               &lt; Continue Shopping
             </small>
-            <button type="submit" className="btn btn-primary">Place Order</button>
+            <button type="submit" className="btn btn-primary mb-5">Place Order</button>
           </div>
         </form>
       </div>
