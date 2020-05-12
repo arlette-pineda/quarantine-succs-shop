@@ -50,6 +50,10 @@
     transform: scale(1.1);
   }
 
+  .pointer:hover {
+    cursor: pointer;
+  }
+
   .glow:hover {
   text-shadow: ivory 1px 0 10px;
   cursor: pointer;
