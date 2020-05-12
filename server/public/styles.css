@@ -27,11 +27,6 @@
   object-fit: contain;
 }
 
-.prod-details-style {
-  border: darkgrey 1px solid;
-  box-shadow: 3px 3px 3px 3px gray;
-}
-
 .box {
   border: darkgrey 1px solid;
 }
