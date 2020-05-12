@@ -5,9 +5,9 @@ function Header(props) {
   const setView = props.setView;
 
   return (
-    <div className="container-lg px-4 d-flex header-style pt-4 mb-5">
+    <div className="container-lg px-4 p-5 d-flex header-style pt-5 mb-5 ">
       <div className="d-inline">
-        <h2 className="glow shrink fas fa-seedling"
+        <h2 className="glow shrink brand-font"
           onClick={() => props.setView('catalog', {})}>
              Quarantine Succs</h2>
       </div>
