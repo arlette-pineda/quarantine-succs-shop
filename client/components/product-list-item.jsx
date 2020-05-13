@@ -2,7 +2,7 @@ import React from 'react';
 
 function ProductListItem(props) {
   return (
-    <div className=" col-md-4 mb-4" onClick={() => props.setView('details', { product: props.product.productId })}>
+    <div className="col-lg-3 col-md-5 m-2 mb-4" onClick={() => props.setView('details', { product: props.product.productId })}>
       <div className="card border-0 h-100 hover" key={props.product.productId}>
         <img src={props.product.image} className="card-img-top img-style h-50" />
         <div className="card-body">
