@@ -7,18 +7,17 @@
 .brand-font {
   font-family: 'Julius Sans One', sans-serif;
 }
-/*
-.brand-icon {
-  background-image: url('/images/echeveria.png');
-  height: 12px;
-  width: 12px;
-} */
 
 .img-style {
   width: 100%;
   max-height: 300px;
   object-fit: contain;
   padding: 1px;
+}
+
+.font-style {
+  color: #16700c;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .img-details {
