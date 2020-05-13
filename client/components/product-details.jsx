@@ -30,14 +30,14 @@ class ProductDetails extends React.Component {
           <div className="row">
             <img className="col-5 d-inline img-style pl-4" src={this.state.product.image} />
             <div className="col-7 card-body">
-              <h2>{this.state.product.name}</h2>
+              <h2 className="font-style">{this.state.product.name}</h2>
               <div className="card-subtitle py-2 text-muted">${(this.state.product.price / 100).toFixed(2)}</div>
               <div className="card-text pb-3">
                 {this.state.product.shortDescription}
               </div>
               <button onClick={() => this.props.addToCart(this.state.product)}
                 type="button"
-                className="btn btn-primary mt-1">
+                className="btn btn-success mt-1">
                 Add to Cart</button>
             </div>
           </div>
