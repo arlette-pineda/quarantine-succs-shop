@@ -16,8 +16,9 @@
 }
 
 .icon-size {
-  width: 3vw;
-  height: 3vh;
+  width: 5vw;
+  height: 5vh;
+  object-fit: contain;
 }
 
 .font-style {
