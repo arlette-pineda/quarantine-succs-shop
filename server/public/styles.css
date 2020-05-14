@@ -15,6 +15,11 @@
   padding: 1px;
 }
 
+.icon-size {
+  width: 3vw;
+  height: 3vh;
+}
+
 .font-style {
   color: #16700c;
   font-family: 'Julius Sans One', sans-serif;
