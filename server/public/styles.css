@@ -6,6 +6,7 @@
 
 .brand-font {
   font-family: 'Julius Sans One', sans-serif;
+  /* font-size: 5vh; */
 }
 
 .img-style {
@@ -72,9 +73,13 @@
     box-shadow: none;
   }
   .shrink {
-    font-size: 4vh;
+    font-size: 3vh;
   }
   .items {
     padding-bottom: 10%;
   }
+
+  /* #cart {
+    display: block;
+  } */
 }
