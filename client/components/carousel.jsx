@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Carousel extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       currentImageIndex: 0,
       images: [
@@ -14,6 +14,21 @@ class Carousel extends React.Component {
         '/images/carousel6.jpg'
       ]
     };
+  }
+
+  prevSlide() {
+    const lastIndex = this.state.images.length - 1;
+    const resetIndex = this.state.currentImageIndex === 0;
+    const index = resetIndex ? lastIndex : this.state.currentImageIndex - 1;
+    this.setState({
+      currentImageIndex: index
+    });
+  }
+
+  render() {
+    return (
+      <div className="carousel"></div>
+    );
   }
 }
 
