@@ -14,6 +14,8 @@ class Carousel extends React.Component {
         '/images/carousel6.jpg'
       ]
     };
+    this.prevSlide = this.prevSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   }
 
   prevSlide() {
