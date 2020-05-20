@@ -35,8 +35,19 @@ class Carousel extends React.Component {
   }
 
   render() {
+    const index = this.state.currentImageIndex;
+    let firstSixSlides = this.state.images.slice(index, index + 6);
+    if (firstSixSlides.length < 6) {
+      firstSixSlides = firstSixSlides.concat(this.state.images.slice(0, 6 - firstSixSlides.length));
+    }
     return (
-      <div className="carousel"></div>
+      <div className="carousel">
+        <i className="fas fa-chevron-left" onClick={this.prevSlide}></i>
+        {firstSixSlides.map((image, index) =>
+          <img key={index} src={image} alt=""/>
+        )}
+        <i className="fas fa-chevron-right" onClick={this.nextSlide}></i>
+      </div>
     );
   }
 }
