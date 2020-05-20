@@ -44,11 +44,11 @@ class Carousel extends React.Component {
     }
     return (
       <div className="carousel">
-        <i className="fas fa-chevron-left" onClick={this.prevSlide}></i>
+        <i className="fas fa-chevron-left align-self-center" onClick={this.prevSlide}></i>
         {firstSixSlides.map((image, index) =>
           <img className="carousel-img" key={index} src={image} alt=""/>
         )}
-        <i className="fas fa-chevron-right" onClick={this.nextSlide}></i>
+        <i className="fas fa-chevron-right align-self-center" onClick={this.nextSlide}></i>
       </div>
     );
   }
