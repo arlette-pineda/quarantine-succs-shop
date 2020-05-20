@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import Carousel from './carousel';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
@@ -87,6 +88,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />
+          <Carousel />
           <ProductList setView={this.setView} view={this.state.view} />
         </div>
       );

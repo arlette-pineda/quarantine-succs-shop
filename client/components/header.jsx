@@ -5,7 +5,7 @@ function Header(props) {
   const setView = props.setView;
 
   return (
-    <div className="container-lg px-4 p-5 d-flex header-style pt-5 mb-5 ">
+    <div className="container-lg px-4 p-5 d-flex header-style pt-5">
       <div className="d-inline" onClick={() => props.setView('catalog', {})}>
         <img className="d-inline icon-size glow pb-2" src="/images/echeveria.png" alt="echeveria"/>
         <h2 className="d-inline glow shrink brand-font">Quarantine Succs</h2>
