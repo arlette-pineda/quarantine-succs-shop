@@ -6,7 +6,16 @@
 
 .brand-font {
   font-family: 'Julius Sans One', sans-serif;
-  /* font-size: 5vh; */
+}
+
+.carousel {
+  height: 30%;
+  width: 50%;
+  display: flex;
+}
+
+.carousel-img {
+  height: 100vh;
 }
 
 .img-style {
