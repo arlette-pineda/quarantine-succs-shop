@@ -9,13 +9,11 @@
 }
 
 .carousel {
-  height: 30%;
-  width: 50%;
   display: flex;
 }
 
 .carousel-img {
-  height: 100vh;
+  height: 60vh;
 }
 
 .img-style {
@@ -34,6 +32,7 @@
 .font-style {
   color: #16700c;
   font-family: 'Julius Sans One', sans-serif;
+  text-shadow: rgb(181, 235, 131) 1px 0 10px;
 }
 
 .img-details {
