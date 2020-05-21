@@ -12,7 +12,7 @@ class Carousel extends React.Component {
           slidesToScroll={1}
           infinite={true}
           dots={true}
-          className="car"
+          className="slider"
         >
           <div className='d-flex justify-content-center align-items-center'>
             <img className='carousel-img' src="/images/carousel1.jpg" alt="1"/>
