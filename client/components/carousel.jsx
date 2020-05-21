@@ -43,7 +43,7 @@ class Carousel extends React.Component {
       firstSixSlides = firstSixSlides.concat(this.state.images.slice(0, 6 - firstSixSlides.length));
     }
     return (
-      <div className="carousel">
+      <div className="carousel mx-4">
         <i className="fas fa-chevron-left align-self-center" onClick={this.prevSlide}></i>
         {firstSixSlides.map((image, index) =>
           <img className="carousel-img" key={index} src={image} alt=""/>
