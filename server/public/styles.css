@@ -8,13 +8,18 @@
   font-family: 'Julius Sans One', sans-serif;
 }
 
+.car {
+  height: 65vh;
+}
+
 .carousel {
-  display: flex;
-  overflow: hidden;
+  height: 75vh;
 }
 
 .carousel-img {
-  height: 60vh;
+  height: 75vh;
+  width: 75%;
+  object-fit: cover;
 }
 
 .img-style {

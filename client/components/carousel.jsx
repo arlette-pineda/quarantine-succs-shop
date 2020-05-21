@@ -1,54 +1,38 @@
 import React from 'react';
+import Slider from 'react-slick';
 
 class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentImageIndex: 0,
-      images: [
-        '/images/carousel1.jpg',
-        '/images/carousel2.jpg',
-        '/images/carousel3.jpg',
-        '/images/carousel4.jpg',
-        '/images/carousel5.jpg',
-        '/images/carousel6.jpg'
-      ]
-    };
-    this.prevSlide = this.prevSlide.bind(this);
-    this.nextSlide = this.nextSlide.bind(this);
-  }
-
-  prevSlide() {
-    const lastIndex = this.state.images.length - 1;
-    const resetIndex = this.state.currentImageIndex === 0;
-    const index = resetIndex ? lastIndex : this.state.currentImageIndex - 1;
-    this.setState({
-      currentImageIndex: index
-    });
-  }
-
-  nextSlide() {
-    const lastIndex = this.state.images.length - 1;
-    const resetIndex = this.state.currentImageIndex === lastIndex;
-    const index = resetIndex ? 0 : this.state.currentImageIndex + 1;
-    this.setState({
-      currentImageIndex: index
-    });
-  }
-
   render() {
-    const index = this.state.currentImageIndex;
-    let firstSixSlides = this.state.images.slice(index, index + 6);
-    if (firstSixSlides.length < 6) {
-      firstSixSlides = firstSixSlides.concat(this.state.images.slice(0, 6 - firstSixSlides.length));
-    }
+
     return (
       <div className="carousel mx-4">
-        <i className="fas fa-chevron-left fa-3x align-self-center pointer" onClick={this.prevSlide}></i>
-        {firstSixSlides.map((image, index) =>
-          <img className="carousel-img" key={index} src={image} alt=""/>
-        )}
-        <i className="fas fa-chevron-right fa-3x align-self-center pointer" onClick={this.nextSlide}></i>
+        <Slider
+          speed={500}
+          slidesToShow={1}
+          slidesToScroll={1}
+          infinite={true}
+          dots={true}
+          className="car"
+        >
+          <div className='d-flex justify-content-center align-items-center'>
+            <img className='carousel-img' src="/images/carousel1.jpg" alt="1"/>
+          </div>
+          <div className='d-flex justify-content-center align-items-center'>
+            <img className='carousel-img' src="/images/carousel2.jpg" alt="2" />
+          </div>
+          <div className='d-flex justify-content-center align-items-center'>
+            <img className='carousel-img' src="/images/carousel3.jpg" alt="3" />
+          </div>
+          {/* <div>
+            <img className='carousel-img' src="/images/carousel4.jpg" alt="4" />
+          </div>
+          <div>
+            <img className='carousel-img' src="/images/carousel5.jpg" alt="5" />
+          </div>
+          <div>
+            <img className='carousel-img' src="/images/carousel6.jpg" alt="6" />
+          </div> */}
+        </Slider>
       </div>
     );
   }
