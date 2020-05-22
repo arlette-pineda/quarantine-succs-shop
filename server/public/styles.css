@@ -10,6 +10,8 @@
 
 .carousel {
   height: 75vh;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .slider {
@@ -87,7 +89,7 @@
     box-shadow: none;
   }
   .shrink {
-    font-size: 3vh;
+    font-size: 2.5vh;
   }
   .items {
     padding-bottom: 10%;
