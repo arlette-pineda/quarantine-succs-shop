@@ -23,6 +23,7 @@
   height: 75vh;
   margin-left: 0;
   margin-right: 0;
+  overflow-x: hidden;
 }
 
 .slider {
