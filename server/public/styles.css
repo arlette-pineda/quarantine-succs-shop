@@ -1,7 +1,22 @@
+
+
 .header-style {
   background-image: url('/images/plants-header.jpg');
   background-position: center;
   color: white;
+}
+
+.sub-header {
+  font-family: Gill Sans, sans-serif;
+  color: plum;
+  font-weight: 300;
+  padding-left: 3%;
+  font-size: 1.3rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#cart {
+  display: inline;
 }
 
 .brand-font {
@@ -10,6 +25,9 @@
 
 .carousel {
   height: 75vh;
+  margin-left: 0;
+  margin-right: 0;
+  overflow-x: hidden;
 }
 
 .slider {
@@ -17,9 +35,11 @@
 }
 
 .carousel-img {
-  height: 75vh;
+  height: 60vh;
   width: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
+  overflow-x: hidden;
 }
 
 .img-style {
@@ -87,9 +107,25 @@
     box-shadow: none;
   }
   .shrink {
-    font-size: 3vh;
+    font-size: 2.5vh;
   }
   .items {
     padding-bottom: 10%;
+  }
+  .sub-header {
+    font-size: 2vh;
+    display: block;
+  }
+
+  .cont-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #cart {
+    align-items: center;
+    justify-content: center;
   }
 }

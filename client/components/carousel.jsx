@@ -5,13 +5,18 @@ class Carousel extends React.Component {
   render() {
 
     return (
-      <div className="carousel mx-4">
+      <div className="carousel">
         <Slider
-          speed={500}
+          autoplay={true}
+          autoplaySpeed={3500}
           slidesToShow={1}
           slidesToScroll={1}
           infinite={true}
+          fade={true}
+          speed={2000}
           dots={true}
+          // arrows={true}
+          // adaptiveHeight={true}
           className="slider"
         >
           <div className='d-flex justify-content-center align-items-center'>
@@ -23,7 +28,7 @@ class Carousel extends React.Component {
           <div className='d-flex justify-content-center align-items-center'>
             <img className='carousel-img' src="/images/carousel3.jpg" alt="3" />
           </div>
-          {/* <div>
+          <div>
             <img className='carousel-img' src="/images/carousel4.jpg" alt="4" />
           </div>
           <div>
@@ -31,7 +36,7 @@ class Carousel extends React.Component {
           </div>
           <div>
             <img className='carousel-img' src="/images/carousel6.jpg" alt="6" />
-          </div> */}
+          </div>
         </Slider>
       </div>
     );

@@ -26,7 +26,7 @@ class ProductList extends React.Component {
 
   render() {
     return (
-      <div className="container mt-5 mb-4">
+      <div className="container mt-5 mb-4 pt-2">
         <div className="row d-flex justify-content-between">
           {this.state.products.map((productPa, index) => {
             return (<ProductListItem key={index} product={productPa}
