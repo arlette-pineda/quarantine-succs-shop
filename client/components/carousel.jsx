@@ -8,12 +8,12 @@ class Carousel extends React.Component {
       <div className="carousel">
         <Slider
           autoplay={true}
-          autoplaySpeed={3000}
+          autoplaySpeed={3500}
           slidesToShow={1}
           slidesToScroll={1}
           infinite={true}
           fade={true}
-          speed={2500}
+          speed={2000}
           dots={true}
           // arrows={true}
           // adaptiveHeight={true}
