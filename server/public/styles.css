@@ -15,6 +15,10 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+#cart {
+  display: inline;
+}
+
 .brand-font {
   font-family: 'Julius Sans One', sans-serif;
 }
@@ -111,5 +115,17 @@
   .sub-header {
     font-size: 2vh;
     display: block;
+  }
+
+  .cont-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #cart {
+    align-items: center;
+    justify-content: center;
   }
 }
