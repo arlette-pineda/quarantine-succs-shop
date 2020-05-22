@@ -108,4 +108,8 @@
   .items {
     padding-bottom: 10%;
   }
+  .sub-header {
+    font-size: 2vh;
+    display: block;
+  }
 }
