@@ -19,9 +19,11 @@
 }
 
 .carousel-img {
-  height: 75vh;
+  height: 60vh;
   width: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
+  overflow-x: hidden;
 }
 
 .img-style {

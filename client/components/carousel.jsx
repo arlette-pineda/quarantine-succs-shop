@@ -12,8 +12,10 @@ class Carousel extends React.Component {
           slidesToShow={1}
           slidesToScroll={1}
           infinite={true}
+          fade={true}
+          speed={2500}
           dots={true}
-          arrows={true}
+          // arrows={true}
           // adaptiveHeight={true}
           className="slider"
         >
