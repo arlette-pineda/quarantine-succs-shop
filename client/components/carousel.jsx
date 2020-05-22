@@ -7,11 +7,14 @@ class Carousel extends React.Component {
     return (
       <div className="carousel">
         <Slider
-          speed={500}
+          autoplay={true}
+          autoplaySpeed={3000}
           slidesToShow={1}
           slidesToScroll={1}
           infinite={true}
           dots={true}
+          arrows={true}
+          // adaptiveHeight={true}
           className="slider"
         >
           <div className='d-flex justify-content-center align-items-center'>
