@@ -11,9 +11,9 @@ function Header(props) {
         <h2 className="d-inline glow shrink brand-font">Quarantine Succs</h2>
         <h6 className="text-center sub-header">&quot;The perfect quiet companion.&quot;</h6>
       </div>
-      <div id="cart" className="d-flex ml-auto pointer"
+      <div id="cart" className="d-flex pointer"
         onClick={() => setView('cart', {})}>
-        <p className="m-2 items">{`${cartItemCount} items`}</p>
+        <p className="m-2">{`${cartItemCount} items`}</p>
         <i className="fas fa-shopping-cart fa-2x glow shrink"></i>
       </div>
     </div>

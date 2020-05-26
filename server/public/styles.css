@@ -15,8 +15,17 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.sub-footer {
+  font-family: Gill Sans, sans-serif;
+  color: plum;
+  font-weight: 300;
+  font-size: 1.2rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 #cart {
   display: inline;
+  margin-left: auto;
 }
 
 .brand-font {
@@ -107,13 +116,11 @@
     box-shadow: none;
   }
   .shrink {
-    font-size: 2.5vh;
+    font-size: 3.5vh;
   }
-  .items {
-    padding-bottom: 10%;
-  }
+
   .sub-header {
-    font-size: 2vh;
+    font-size: 2.3vh;
     display: block;
   }
 
@@ -125,7 +132,8 @@
   }
 
   #cart {
+    margin: auto;
+    display: flex;
     align-items: center;
-    justify-content: center;
   }
 }

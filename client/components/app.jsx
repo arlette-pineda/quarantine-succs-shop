@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import Carousel from './carousel';
+import Footer from './footer';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
@@ -90,6 +91,7 @@ export default class App extends React.Component {
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <Carousel />
           <ProductList setView={this.setView} view={this.state.view} />
+          <Footer />
         </div>
       );
     } else if (this.state.view.name === 'details') {
@@ -97,6 +99,7 @@ export default class App extends React.Component {
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <ProductDetails paramProp={this.state.view.params} setView={this.setView} addToCart={this.addToCart} />
+          <Footer />
         </div>
       );
     } else if (this.state.view.name === 'cart') {
@@ -104,6 +107,7 @@ export default class App extends React.Component {
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <CartSummary cart={this.state.cart} setView={this.setView} />
+          <Footer />
         </div>
       );
     } else if (this.state.view.name === 'checkout') {
@@ -111,6 +115,7 @@ export default class App extends React.Component {
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <CheckoutForm cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView} />
+          <Footer />
         </div>
       );
     }
