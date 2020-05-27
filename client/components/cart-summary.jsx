@@ -21,12 +21,12 @@ function CartSummary(props) {
   }
 
   return (
-    <div className="container cart-height">
+    <div className="container py-5 cart-height">
       <small className="row ml-1 mb-2 mt-2 back"
         onClick={() => props.setView('catalog', {})}>
         &lt;Back to catalog
       </small>
-      <h1 className="mt-2 ml-3">My Cart</h1>
+      <h1 className="mt-2 ml-3 my-3">My Cart</h1>
       {
         props.cart.map(cartItem => {
           return (
