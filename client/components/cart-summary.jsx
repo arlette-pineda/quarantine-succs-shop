@@ -10,7 +10,7 @@ function CartSummary(props) {
 
   if (props.cart.length === 0) {
     return (
-      <div className="mx-3">
+      <div className="mx-3 py-5">
         <small className="row back ml-2 mb-2 mt-2 pointer"
           onClick={() => props.setView('catalog', {})}>
           &lt;Back to catalog
