@@ -28,6 +28,10 @@
   margin-left: auto;
 }
 
+.cart-height {
+  min-height: 80vh;
+}
+
 .brand-font {
   font-family: 'Julius Sans One', sans-serif;
 }
