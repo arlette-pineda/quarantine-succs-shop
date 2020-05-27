@@ -15,7 +15,7 @@ function CartSummary(props) {
           onClick={() => props.setView('catalog', {})}>
           &lt;Back to catalog
         </small>
-        <p className="text-center">You haven&#39;t added anything yet!</p>
+        <p className="text-center pt-5">You haven&#39;t added anything yet!</p>
       </div>
     );
   }
