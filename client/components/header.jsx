@@ -13,7 +13,11 @@ function Header(props) {
       </div>
       <div id="cart" className="d-flex pointer"
         onClick={() => setView('cart', {})}>
-        <p className="m-2">{`${cartItemCount} items`}</p>
+        <p className="m-2">
+          {cartItemCount === 1
+            ? cartItemCount + ' item '
+            : cartItemCount + ' items '}
+        </p>
         <i className="fas fa-shopping-cart fa-2x glow shrink"></i>
       </div>
     </div>
