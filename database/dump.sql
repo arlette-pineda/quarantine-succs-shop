@@ -359,10 +359,6 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 --
 
 COPY public.carts ("cartId", "createdAt") FROM stdin;
-131	2020-05-27 01:34:34.263366+00
-132	2020-05-27 17:44:06.707559+00
-133	2020-05-27 17:50:15.414949+00
-134	2020-05-27 18:23:00.283254+00
 \.
 
 
