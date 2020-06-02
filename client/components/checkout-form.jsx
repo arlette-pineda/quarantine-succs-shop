@@ -55,17 +55,27 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <div className="container cart-height">
-        <h3 className="mb-4 mt-5">My Cart</h3>
-        <small className="text-muted">Order Total: ${this.getTotal()}</small>
+        <h1 className="mb-4 mt-5">My Cart</h1>
+        <h3 className="text-muted">Order Total: ${this.getTotal()}</h3>
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="customerName">Name</label>
+            <label className="d-block mt-4" htmlFor="customerName">First Name</label>
             <input
               onChange={this.handleChangeName}
               className="form-control"
-              placeholder="John Smith"
+              placeholder="John"
               type="text"
-              id="customerName"
+              id="firstName"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="customerName">Last Name</label>
+            <input
+              onChange={this.handleChangeName}
+              className="form-control"
+              placeholder="Smith"
+              type="text"
+              id="lastName"
               required />
           </div>
           <div className="input-group-lg mb-3">
