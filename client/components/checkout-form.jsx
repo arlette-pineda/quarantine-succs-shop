@@ -59,13 +59,23 @@ class CheckoutForm extends React.Component {
         <h3 className="text-muted">Order Total: ${this.getTotal()}</h3>
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="customerName">Name</label>
+            <label className="d-block mt-4" htmlFor="customerName">First Name</label>
             <input
               onChange={this.handleChangeName}
               className="form-control"
-              placeholder="John Smith"
+              placeholder="John"
               type="text"
-              id="customerName"
+              id="firstName"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="customerName">Last Name</label>
+            <input
+              onChange={this.handleChangeName}
+              className="form-control"
+              placeholder="Smith"
+              type="text"
+              id="lastName"
               required />
           </div>
           <div className="input-group-lg mb-3">
