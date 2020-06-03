@@ -109,6 +109,16 @@ class CheckoutForm extends React.Component {
               required />
           </div>
           <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="state">State</label>
+            <input
+              onChange={this.handleChangeName}
+              className="form-control"
+              placeholder="State"
+              type="text"
+              id="state"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
             <label className="d-block" htmlFor="creditCard">Credit Card</label>
             <input
               onChange={this.handleChangeCard}
