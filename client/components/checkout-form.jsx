@@ -59,7 +59,7 @@ class CheckoutForm extends React.Component {
         <h3 className="text-muted">Order Total: ${this.getTotal()}</h3>
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="customerName">First Name</label>
+            <label className="d-block mt-4" htmlFor="firstName">First Name</label>
             <input
               onChange={this.handleChangeName}
               className="form-control"
@@ -69,7 +69,7 @@ class CheckoutForm extends React.Component {
               required />
           </div>
           <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="customerName">Last Name</label>
+            <label className="d-block mt-4" htmlFor="lastName">Last Name</label>
             <input
               onChange={this.handleChangeName}
               className="form-control"
@@ -79,13 +79,23 @@ class CheckoutForm extends React.Component {
               required />
           </div>
           <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="customerName">Address Line 1</label>
+            <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1</label>
             <input
               onChange={this.handleChangeName}
               className="form-control"
               placeholder="1234 Your St."
               type="text"
               id="addressLine1"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="addressLine2">Address Line 2 </label>
+            <input
+              onChange={this.handleChangeName}
+              className="form-control"
+              placeholder="apt. 1"
+              type="text"
+              id="addressLine2"
               required />
           </div>
           <div className="input-group-lg mb-3">
