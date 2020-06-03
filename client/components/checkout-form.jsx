@@ -138,16 +138,7 @@ class CheckoutForm extends React.Component {
               id="creditCard"
               required />
           </div>
-          <div className="input-group-lg">
-            <label className="d-block" htmlFor="shippingAddress">Shipping Address</label>
-            <textarea
-              onChange={this.handleChangeAddress}
-              className="form-control"
-              placeholder="Street, City, State, Zip Code"
-              id="shippingAddress"
-              required >
-            </textarea>
-          </div>
+
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
             <small className="back"
               onClick={() => this.props.setView('catalog', {})}>
