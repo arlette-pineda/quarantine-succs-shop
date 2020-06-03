@@ -59,9 +59,8 @@ class CheckoutForm extends React.Component {
         <h3 className="text-muted">Order Total: ${this.getTotal()}</h3>
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="customerName">First Name</label>
+            <label className="d-block mt-4" htmlFor="firstName">First Name</label>
             <input
-              onChange={this.handleChangeName}
               className="form-control"
               placeholder="John"
               type="text"
@@ -69,13 +68,57 @@ class CheckoutForm extends React.Component {
               required />
           </div>
           <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="customerName">Last Name</label>
+            <label className="d-block mt-4" htmlFor="lastName">Last Name</label>
             <input
-              onChange={this.handleChangeName}
               className="form-control"
               placeholder="Smith"
               type="text"
               id="lastName"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1</label>
+            <input
+              className="form-control"
+              placeholder="1234 Your St."
+              type="text"
+              id="addressLine1"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="addressLine2">Address Line 2 </label>
+            <input
+              className="form-control"
+              placeholder="apt. 1"
+              type="text"
+              id="addressLine2"
+            />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="city">City</label>
+            <input
+              className="form-control"
+              placeholder="Your City"
+              type="text"
+              id="city"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="state">State</label>
+            <input
+              className="form-control"
+              placeholder="State"
+              type="text"
+              id="state"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="zipCode">Zip Code</label>
+            <input
+              className="form-control"
+              placeholder="00000"
+              type="text"
+              id="zipCode"
               required />
           </div>
           <div className="input-group-lg mb-3">
@@ -88,15 +131,29 @@ class CheckoutForm extends React.Component {
               id="creditCard"
               required />
           </div>
-          <div className="input-group-lg">
-            <label className="d-block" htmlFor="shippingAddress">Shipping Address</label>
-            <textarea
-              onChange={this.handleChangeAddress}
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="month">Month</label>
+            <input
               className="form-control"
-              placeholder="Street, City, State, Zip Code"
-              id="shippingAddress"
-              required >
-            </textarea>
+              type="text"
+              id="month"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="year">Year</label>
+            <input
+              className="form-control"
+              type="text"
+              id="year"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="cvv">CVV</label>
+            <input
+              className="form-control"
+              type="text"
+              id="cvv"
+              required />
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
             <small className="back"
