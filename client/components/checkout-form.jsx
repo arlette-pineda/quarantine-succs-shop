@@ -143,9 +143,26 @@ class CheckoutForm extends React.Component {
             <input
               onChange=
               className="form-control"
-              placeholder="Smith"
               type="text"
               id="month"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="year">Year</label>
+            <input
+              onChange=
+              className="form-control"
+              type="text"
+              id="year"
+              required />
+          </div>
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="cvv">CVV</label>
+            <input
+              onChange=
+              className="form-control"
+              type="text"
+              id="cvv"
               required />
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
