@@ -61,7 +61,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="firstName">First Name</label>
             <input
-              onChange={this.handleChangeName}
+              onChange=
               className="form-control"
               placeholder="John"
               type="text"
@@ -71,7 +71,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="lastName">Last Name</label>
             <input
-              onChange={this.handleChangeName}
+              onChange=
               className="form-control"
               placeholder="Smith"
               type="text"
@@ -81,7 +81,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1</label>
             <input
-              onChange={this.handleChangeName}
+              onChange=
               className="form-control"
               placeholder="1234 Your St."
               type="text"
@@ -91,17 +91,17 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="addressLine2">Address Line 2 </label>
             <input
-              onChange={this.handleChangeName}
+              onChange=
               className="form-control"
               placeholder="apt. 1"
               type="text"
               id="addressLine2"
-              required />
+            />
           </div>
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="city">City</label>
             <input
-              onChange={this.handleChangeName}
+              onChange=
               className="form-control"
               placeholder="Your City"
               type="text"
@@ -111,7 +111,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="state">State</label>
             <input
-              onChange={this.handleChangeName}
+              onChange=
               className="form-control"
               placeholder="State"
               type="text"
@@ -121,7 +121,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="zipCode">Zip Code</label>
             <input
-              onChange={this.handleChangeName}
+              onChange=
               className="form-control"
               placeholder="00000"
               type="text"
@@ -138,7 +138,16 @@ class CheckoutForm extends React.Component {
               id="creditCard"
               required />
           </div>
-
+          <div className="input-group-lg mb-3">
+            <label className="d-block mt-4" htmlFor="month">Month</label>
+            <input
+              onChange=
+              className="form-control"
+              placeholder="Smith"
+              type="text"
+              id="month"
+              required />
+          </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
             <small className="back"
               onClick={() => this.props.setView('catalog', {})}>
