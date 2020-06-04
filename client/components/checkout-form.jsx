@@ -75,7 +75,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-md-6">
               <label className="d-block mt-4" htmlFor="firstName">First Name</label>
               <input
-                onChange={this.handleChangeCard}
+                onChange={this.handleChangeFirstName}
                 className="form-control"
                 placeholder="John"
                 type="text"
@@ -85,6 +85,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-md-6">
               <label className="d-block mt-4" htmlFor="lastName">Last Name</label>
               <input
+                onChange={this.handleChangeLastName}
                 className="form-control"
                 placeholder="Smith"
                 type="text"
@@ -96,6 +97,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-md-6">
               <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1</label>
               <input
+                onChange={this.handleChangeAddressLine1}
                 className="form-control"
                 placeholder="1234 Your St."
                 type="text"
@@ -105,6 +107,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-md-6">
               <label className="d-block mt-4" htmlFor="addressLine2">Address Line 2 </label>
               <input
+                onChange={this.handleChangeAddressLine2}
                 className="form-control"
                 placeholder="Apt. 1"
                 type="text"
@@ -116,6 +119,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-md-6">
               <label className="d-block mt-4" htmlFor="city">City</label>
               <input
+                onChange={this.handleChangeCity}
                 className="form-control"
                 placeholder="Your City"
                 type="text"
@@ -125,6 +129,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-md-3">
               <label className="d-block mt-4" htmlFor="state">State</label>
               <input
+                onChange={this.handleChangeState}
                 className="form-control"
                 placeholder="State"
                 type="text"
@@ -134,6 +139,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-md-3">
               <label className="d-block mt-4" htmlFor="zipCode">Zip Code</label>
               <input
+                onChange={this.handleChangeZipCode}
                 className="form-control"
                 placeholder="00000"
                 type="text"
@@ -156,6 +162,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="month">Month</label>
               <input
+                onChange={this.handleChangeMonth}
                 className="form-control"
                 type="text"
                 id="month"
@@ -164,6 +171,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="year">Year</label>
               <input
+                onChange={this.handleChangeYear}
                 className="form-control"
                 type="text"
                 id="year"
@@ -172,6 +180,7 @@ class CheckoutForm extends React.Component {
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="cvv">CVV</label>
               <input
+                onChange={this.handleChangeCvv}
                 className="form-control"
                 type="text"
                 id="cvv"
