@@ -93,6 +93,12 @@
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075);
 }
 
+.checkout-border {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  border-radius: .25rem;
+}
+
 .back {
   color: dimgray;
   font-size: 0.7rem;

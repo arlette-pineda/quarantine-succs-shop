@@ -65,7 +65,7 @@ class CheckoutForm extends React.Component {
       <div className="container cart-height">
         <h1 className="mb-4 mt-5">My Cart</h1>
         <h3 className="text-muted">Order Total: ${this.getTotal()}</h3>
-        <form onSubmit={this.handleSubmit} autoComplete="off">
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-3">
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="firstName">First Name</label>
             <input
