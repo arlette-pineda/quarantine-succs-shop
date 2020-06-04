@@ -142,7 +142,7 @@ class CheckoutForm extends React.Component {
             </div>
           </div>
           <h2 className="my-4">Payment Details</h2>
-          <div className="input-group-lg mb-3">
+          <div className="input-group-lg mb-3 col-sm-9 px-0">
             <label className="d-block" htmlFor="creditCard">Credit Card</label>
             <input
               onChange={this.handleChangeCard}
@@ -179,7 +179,7 @@ class CheckoutForm extends React.Component {
             </div>
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-end">
-            <button type="submit" className="btn btn-primary mb-5">Place Order</button>
+            <button type="submit" className="btn btn-primary mb-2">Place Order</button>
           </div>
         </form>
       </div>
