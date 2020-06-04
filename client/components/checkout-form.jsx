@@ -67,10 +67,10 @@ class CheckoutForm extends React.Component {
           onClick={() => this.props.setView('catalog', {})}>
           &lt; Continue Shopping
         </small>
-        <h1 className="mb-4 mt-5">My Cart</h1>
+        <h1 className="mb-4 mt-5 brand-font">My Cart</h1>
         <h3 className="text-muted pb-4">Order Total: ${this.getTotal()}</h3>
-        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-3">
-          <h2>Billing Address</h2>
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-5">
+          <h2 className="mt-3">Billing Address</h2>
           <div className="row">
             <div className="input-group-lg mb-3 col-md-6">
               <label className="d-block mt-4" htmlFor="firstName">First Name</label>
@@ -141,6 +141,7 @@ class CheckoutForm extends React.Component {
                 required />
             </div>
           </div>
+          <h2 className="my-4">Payment Details</h2>
           <div className="input-group-lg mb-3">
             <label className="d-block" htmlFor="creditCard">Credit Card</label>
             <input
@@ -151,29 +152,31 @@ class CheckoutForm extends React.Component {
               id="creditCard"
               required />
           </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="month">Month</label>
-            <input
-              className="form-control"
-              type="text"
-              id="month"
-              required />
-          </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="year">Year</label>
-            <input
-              className="form-control"
-              type="text"
-              id="year"
-              required />
-          </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="cvv">CVV</label>
-            <input
-              className="form-control"
-              type="text"
-              id="cvv"
-              required />
+          <div className="row">
+            <div className="input-group-lg mb-3 col-sm-3">
+              <label className="d-block mt-4" htmlFor="month">Month</label>
+              <input
+                className="form-control"
+                type="text"
+                id="month"
+                required />
+            </div>
+            <div className="input-group-lg mb-3 col-sm-3">
+              <label className="d-block mt-4" htmlFor="year">Year</label>
+              <input
+                className="form-control"
+                type="text"
+                id="year"
+                required />
+            </div>
+            <div className="input-group-lg mb-3 col-sm-3">
+              <label className="d-block mt-4" htmlFor="cvv">CVV</label>
+              <input
+                className="form-control"
+                type="text"
+                id="cvv"
+                required />
+            </div>
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-end">
             <button type="submit" className="btn btn-primary mb-5">Place Order</button>
