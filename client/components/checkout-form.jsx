@@ -4,9 +4,17 @@ class CheckoutForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      firstName: '',
+      lastName: '',
+      addressLine1: '',
+      addressLine2: '',
+      city: '',
+      state: '',
+      zipCode: '',
       creditCard: '',
-      shippingAddress: ''
+      month: '',
+      year: '',
+      cvv: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
@@ -61,6 +69,7 @@ class CheckoutForm extends React.Component {
           <div className="input-group-lg mb-3">
             <label className="d-block mt-4" htmlFor="firstName">First Name</label>
             <input
+              onChange={this.handleChangeCard}
               className="form-control"
               placeholder="John"
               type="text"
