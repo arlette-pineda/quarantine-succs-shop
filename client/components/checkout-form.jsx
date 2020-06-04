@@ -62,73 +62,84 @@ class CheckoutForm extends React.Component {
 
   render() {
     return (
-      <div className="container cart-height">
+      <div className="container cart-height mt-5">
+        <small className="back"
+          onClick={() => this.props.setView('catalog', {})}>
+          &lt; Continue Shopping
+        </small>
         <h1 className="mb-4 mt-5">My Cart</h1>
-        <h3 className="text-muted">Order Total: ${this.getTotal()}</h3>
+        <h3 className="text-muted pb-4">Order Total: ${this.getTotal()}</h3>
         <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-3">
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="firstName">First Name</label>
-            <input
-              onChange={this.handleChangeCard}
-              className="form-control"
-              placeholder="John"
-              type="text"
-              id="firstName"
-              required />
+          <h2>Billing Address</h2>
+          <div className="row">
+            <div className="input-group-lg mb-3 col-md-6">
+              <label className="d-block mt-4" htmlFor="firstName">First Name</label>
+              <input
+                onChange={this.handleChangeCard}
+                className="form-control"
+                placeholder="John"
+                type="text"
+                id="firstName"
+                required />
+            </div>
+            <div className="input-group-lg mb-3 col-md-6">
+              <label className="d-block mt-4" htmlFor="lastName">Last Name</label>
+              <input
+                className="form-control"
+                placeholder="Smith"
+                type="text"
+                id="lastName"
+                required />
+            </div>
           </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="lastName">Last Name</label>
-            <input
-              className="form-control"
-              placeholder="Smith"
-              type="text"
-              id="lastName"
-              required />
+          <div className="row">
+            <div className="input-group-lg mb-3 col-md-6">
+              <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1</label>
+              <input
+                className="form-control"
+                placeholder="1234 Your St."
+                type="text"
+                id="addressLine1"
+                required />
+            </div>
+            <div className="input-group-lg mb-3 col-md-6">
+              <label className="d-block mt-4" htmlFor="addressLine2">Address Line 2 </label>
+              <input
+                className="form-control"
+                placeholder="Apt. 1"
+                type="text"
+                id="addressLine2"
+              />
+            </div>
           </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1</label>
-            <input
-              className="form-control"
-              placeholder="1234 Your St."
-              type="text"
-              id="addressLine1"
-              required />
-          </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="addressLine2">Address Line 2 </label>
-            <input
-              className="form-control"
-              placeholder="apt. 1"
-              type="text"
-              id="addressLine2"
-            />
-          </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="city">City</label>
-            <input
-              className="form-control"
-              placeholder="Your City"
-              type="text"
-              id="city"
-              required />
-          </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="state">State</label>
-            <input
-              className="form-control"
-              placeholder="State"
-              type="text"
-              id="state"
-              required />
-          </div>
-          <div className="input-group-lg mb-3">
-            <label className="d-block mt-4" htmlFor="zipCode">Zip Code</label>
-            <input
-              className="form-control"
-              placeholder="00000"
-              type="text"
-              id="zipCode"
-              required />
+          <div className="row">
+            <div className="input-group-lg mb-3 col-md-6">
+              <label className="d-block mt-4" htmlFor="city">City</label>
+              <input
+                className="form-control"
+                placeholder="Your City"
+                type="text"
+                id="city"
+                required />
+            </div>
+            <div className="input-group-lg mb-3 col-md-3">
+              <label className="d-block mt-4" htmlFor="state">State</label>
+              <input
+                className="form-control"
+                placeholder="State"
+                type="text"
+                id="state"
+                required />
+            </div>
+            <div className="input-group-lg mb-3 col-md-3">
+              <label className="d-block mt-4" htmlFor="zipCode">Zip Code</label>
+              <input
+                className="form-control"
+                placeholder="00000"
+                type="text"
+                id="zipCode"
+                required />
+            </div>
           </div>
           <div className="input-group-lg mb-3">
             <label className="d-block" htmlFor="creditCard">Credit Card</label>
@@ -164,11 +175,7 @@ class CheckoutForm extends React.Component {
               id="cvv"
               required />
           </div>
-          <div className="row mt-5 ml-2 mr-2 d-flex justify-content-between">
-            <small className="back"
-              onClick={() => this.props.setView('catalog', {})}>
-              &lt; Continue Shopping
-            </small>
+          <div className="row mt-5 ml-2 mr-2 d-flex justify-content-end">
             <button type="submit" className="btn btn-primary mb-5">Place Order</button>
           </div>
         </form>
