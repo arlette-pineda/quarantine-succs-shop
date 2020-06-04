@@ -42,9 +42,45 @@ class CheckoutForm extends React.Component {
 
   }
 
-  handleChangeName(event) {
+  handleChangeFirstName(event) {
     this.setState({
-      name: event.target.value
+      firstName: event.target.value
+    });
+  }
+
+  handleChangeLastName(event) {
+    this.setState({
+      lastName: event.target.value
+    });
+  }
+
+  handleChangeAddressLine1(event) {
+    this.setState({
+      addressLine1: event.target.value
+    });
+  }
+
+  handleChangeAddressLine2(event) {
+    this.setState({
+      addressLine2: event.target.value
+    });
+  }
+
+  handleChangeCity(event) {
+    this.setState({
+      city: event.target.value
+    });
+  }
+
+  handleChangeState(event) {
+    this.setState({
+      state: event.target.value
+    });
+  }
+
+  handleChangeZipCode(event) {
+    this.setState({
+      zipCode: event.target.value
     });
   }
 
@@ -54,9 +90,21 @@ class CheckoutForm extends React.Component {
     });
   }
 
-  handleChangeAddress(event) {
+  handleChangeMonth(event) {
     this.setState({
-      shippingAddress: event.target.value
+      month: event.target.value
+    });
+  }
+
+  handleChangeYear(event) {
+    this.setState({
+      year: event.target.value
+    });
+  }
+
+  handleChangeCvv(event) {
+    this.setState({
+      cvv: event.target.value
     });
   }
 
