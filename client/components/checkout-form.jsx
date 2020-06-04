@@ -17,7 +17,7 @@ class CheckoutForm extends React.Component {
       cvv: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChangefirstName = this.handleChangefirstName.bind(this);
+    this.handleChangefirstName = this.handleChangeFirstName.bind(this);
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
     this.handleChangeAddressLine1 = this.handleChangeAddressLine1.bind(this);
     this.handleChangeAddressLine2 = this.handleChangeAddressLine2.bind(this);
@@ -55,7 +55,6 @@ class CheckoutForm extends React.Component {
       cvv: this.state.cvv
     };
     this.props.placeOrder(orderObject);
-
   }
 
   handleChangeFirstName(event) {
@@ -185,7 +184,6 @@ class CheckoutForm extends React.Component {
               <input
                 onChange={this.handleChangeCity}
                 className="form-control"
-                placeholder="Your City"
                 type="text"
                 id="city"
                 required />
@@ -195,7 +193,6 @@ class CheckoutForm extends React.Component {
               <input
                 onChange={this.handleChangeState}
                 className="form-control"
-                placeholder="State"
                 type="text"
                 id="state"
                 required />
@@ -205,7 +202,6 @@ class CheckoutForm extends React.Component {
               <input
                 onChange={this.handleChangeZipCode}
                 className="form-control"
-                placeholder="00000"
                 type="text"
                 id="zipCode"
                 required />
