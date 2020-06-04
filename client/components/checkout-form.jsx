@@ -34,9 +34,17 @@ class CheckoutForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const orderObject = {
-      name: this.state.name,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      addressLine1: this.state.addressLine1,
+      addressLine2: this.state.addressLine2,
+      city: this.state.city,
+      state: this.state.state,
+      zipCode: this.state.zipCode,
       creditCard: this.state.creditCard,
-      shippingAddress: this.state.shippingAddress
+      month: this.state.month,
+      year: this.state.year,
+      cvv: this.state.cvv
     };
     this.props.placeOrder(orderObject);
 
