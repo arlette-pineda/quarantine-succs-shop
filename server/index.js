@@ -194,7 +194,7 @@ app.post('/api/orders', (req, res, next) => {
   if (!order.firstName || !order.lastName || !order.addressLine1 || !order.city || !order.state ||
       !order.zipCode || !order.creditCard || !order.month || !order.year || !order.cvv) {
     return res.status(400).json({
-      error: 'fields first and last name, address, city, state, zipcode, credit card, month, year, and cvv are required'
+      error: 'fields first and last name, address1, city, state, zipcode, credit card, month, year, and cvv are required'
     });
   }
 
@@ -204,7 +204,7 @@ app.post('/api/orders', (req, res, next) => {
     returning *
   `;
 
-  const values = [req.session.cartId, order.firstName, order.lastName, order.addressLine1,
+  const values = [req.session.cartId, order.firstName, order.lastName, order.addressLine1, order.addressLine2,
     order.city, order.state, order.zipCode, order.creditCard, order.month, order.year, order.cvv];
 
   db.query(sql, values)
