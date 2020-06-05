@@ -17,7 +17,7 @@ class CheckoutForm extends React.Component {
       cvv: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChangefirstName = this.handleChangeFirstName.bind(this);
+    this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
     this.handleChangeLastName = this.handleChangeLastName.bind(this);
     this.handleChangeAddressLine1 = this.handleChangeAddressLine1.bind(this);
     this.handleChangeAddressLine2 = this.handleChangeAddressLine2.bind(this);

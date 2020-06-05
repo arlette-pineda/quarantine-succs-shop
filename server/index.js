@@ -191,19 +191,21 @@ app.post('/api/orders', (req, res, next) => {
     });
   }
 
-  if (!order.name || !order.creditCard || !order.shippingAddress) {
+  if (!order.firstName || !order.lastName || !order.addressLine1 || !order.city || !order.state ||
+      !order.zipCode || !order.creditCard || !order.month || !order.year || !order.cvv) {
     return res.status(400).json({
-      error: 'fields name, credit card, and address are required'
+      error: 'fields first and last name, address1, city, state, zipcode, credit card, month, year, and cvv are required'
     });
   }
 
   const sql = `
-    insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
-    values ($1, $2, $3, $4)
+    insert into "orders" ("cartId", "firstName", "lastName", "addressLine1", "addressLine2", "city", "state", "zipCode", "creditCard", "month", "year", "cvv")
+    values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
     returning *
   `;
 
-  const values = [req.session.cartId, order.name, order.creditCard, order.shippingAddress];
+  const values = [req.session.cartId, order.firstName, order.lastName, order.addressLine1, order.addressLine2,
+    order.city, order.state, order.zipCode, order.creditCard, order.month, order.year, order.cvv];
 
   db.query(sql, values)
     .then(result => {
