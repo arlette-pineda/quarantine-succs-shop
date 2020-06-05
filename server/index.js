@@ -204,7 +204,8 @@ app.post('/api/orders', (req, res, next) => {
     returning *
   `;
 
-  const values = [req.session.cartId, order.name, order.creditCard, order.shippingAddress];
+  const values = [req.session.cartId, order.firstName, order.lastName, order.addressLine1,
+    order.city, order.state, order.zipCode, order.creditCard, order.month, order.year, order.cvv];
 
   db.query(sql, values)
     .then(result => {
