@@ -191,9 +191,10 @@ app.post('/api/orders', (req, res, next) => {
     });
   }
 
-  if (!order.name || !order.creditCard || !order.shippingAddress) {
+  if (!order.firstName || !order.lastName || !order.addressLine1 || !order.city || !order.state ||
+      !order.zipCode || !order.creditCard || !order.month || !order.year || !order.cvv) {
     return res.status(400).json({
-      error: 'fields name, credit card, and address are required'
+      error: 'fields first and last name, address, city, state, zipcode, credit card, month, year, and cvv are required'
     });
   }
 
