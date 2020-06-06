@@ -190,12 +190,63 @@ class CheckoutForm extends React.Component {
             </div>
             <div className="input-group-lg mb-3 col-md-3">
               <label className="d-block mt-4" htmlFor="state">State</label>
-              <input
+              <select
                 onChange={this.handleChangeState}
                 className="form-control"
                 type="text"
                 id="state"
-                required />
+                required >
+                <option value=""></option>
+                <option value="Alabama">AL</option>
+                <option value="Alaska">AK</option>
+                <option value="Arizona">AZ</option>
+                <option value="California">CA</option>
+                <option value="Colorado">CO</option>
+                <option value="Connecticut">CT</option>
+                <option value="Delaware">DE</option>
+                <option value="Florida">FL</option>
+                <option value="Georgia">GA</option>
+                <option value="Hawaii">HI</option>
+                <option value="Idaho">ID</option>
+                <option value="Illinois">IL</option>
+                <option value="Indiana">IN</option>
+                <option value="Iowa">IA</option>
+                <option value="Kansas">KS</option>
+                <option value="Kentucky">KY</option>
+                <option value="Lousiana">LA</option>
+                <option value="Maine">ME</option>
+                <option value="Maryland">MD</option>
+                <option value="Massachusetts">MA</option>
+                <option value="Michigan">MI</option>
+                <option value="Minnesota">MN</option>
+                <option value="Mississippi">MS</option>
+                <option value="Missouri">MO</option>
+                <option value="Montana">MT</option>
+                <option value="Nebraska">NE</option>
+                <option value="Nevada">NV</option>
+                <option value="New Hampshire">NH</option>
+                <option value="New Jersey">NJ</option>
+                <option value="New Mexico">NM</option>
+                <option value="New York">NY</option>
+                <option value="North Carolina">NC</option>
+                <option value="North Dakota">ND</option>
+                <option value="Ohio">OH</option>
+                <option value="Oklahoma">OK</option>
+                <option value="Oregon">OR</option>
+                <option value="Pennsylvania">PA</option>
+                <option value="Rhode Island">RI</option>
+                <option value="South Carolina">SC</option>
+                <option value="South Dakota">SD</option>
+                <option value="Tennessee">TN</option>
+                <option value="Texas">TX</option>
+                <option value="Utah">UT</option>
+                <option value="Vermont">VT</option>
+                <option value="Viginia">VA</option>
+                <option value="Washington">WA</option>
+                <option value="West Virginia">WV</option>
+                <option value="Wisconsin">WI</option>
+                <option value="Wyoming">WY</option>
+              </select>
             </div>
             <div className="input-group-lg mb-3 col-md-3">
               <label className="d-block mt-4" htmlFor="zipCode">Zip Code</label>
@@ -221,21 +272,48 @@ class CheckoutForm extends React.Component {
           <div className="row">
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="month">Month</label>
-              <input
+              <select
                 onChange={this.handleChangeMonth}
                 className="form-control"
                 type="text"
                 id="month"
-                required />
+                required >
+                <option value=""></option>
+                <option value="January">Jan</option>
+                <option value="February">Feb</option>
+                <option value="March">Mar</option>
+                <option value="April">Apr</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">Aug</option>
+                <option value="September">Sept</option>
+                <option value="October">Oct</option>
+                <option value="November">Nov</option>
+                <option value="December">Dec</option>
+              </select>
             </div>
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="year">Year</label>
-              <input
+              <select
                 onChange={this.handleChangeYear}
                 className="form-control"
                 type="text"
                 id="year"
-                required />
+                required >
+                <option value=""></option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>
             </div>
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="cvv">CVV</label>
