@@ -227,7 +227,7 @@ class CheckoutForm extends React.Component {
                 type="text"
                 id="month"
                 required >
-                <option value="">Month</option>
+                <option value=""></option>
                 <option value="January">Jan</option>
                 <option value="February">Feb</option>
                 <option value="March">Mar</option>
@@ -244,12 +244,25 @@ class CheckoutForm extends React.Component {
             </div>
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="year">Year</label>
-              <input
+              <select
                 onChange={this.handleChangeYear}
                 className="form-control"
                 type="text"
                 id="year"
-                required />
+                required >
+                <option value=""></option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>
             </div>
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="cvv">CVV</label>
