@@ -196,6 +196,7 @@ class CheckoutForm extends React.Component {
                 type="text"
                 id="state"
                 required >
+                <option value=""></option>
                 <option value="Alabama">AL</option>
                 <option value="Alaska">AK</option>
                 <option value="Arizona">AZ</option>
