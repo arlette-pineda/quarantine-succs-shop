@@ -221,12 +221,26 @@ class CheckoutForm extends React.Component {
           <div className="row">
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="month">Month</label>
-              <input
+              <select
                 onChange={this.handleChangeMonth}
                 className="form-control"
                 type="text"
                 id="month"
-                required />
+                required >
+                <option value="">Month</option>
+                <option value="January">Jan</option>
+                <option value="February">Feb</option>
+                <option value="March">Mar</option>
+                <option value="April">Apr</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">Aug</option>
+                <option value="September">Sept</option>
+                <option value="October">Oct</option>
+                <option value="November">Nov</option>
+                <option value="December">Dec</option>
+              </select>
             </div>
             <div className="input-group-lg mb-3 col-sm-3">
               <label className="d-block mt-4" htmlFor="year">Year</label>
