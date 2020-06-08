@@ -141,7 +141,7 @@ CREATE TABLE public.orders (
     "addressLine2" text,
     city text NOT NULL,
     state text NOT NULL,
-    "zipCode" integer NOT NULL,
+    "zipCode" text NOT NULL,
     "creditCard" text NOT NULL,
     month text NOT NULL,
     year text NOT NULL,
@@ -464,4 +464,3 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
-
