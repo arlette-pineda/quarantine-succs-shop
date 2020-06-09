@@ -45,6 +45,11 @@
   font-family: 'Julius Sans One', sans-serif;
 }
 
+.btn-color {
+  background-color:rgb(202, 171, 187);
+  color: white;
+}
+
 .modal {
   background-color: rgba(0,0,0,.50);
   position: fixed;
