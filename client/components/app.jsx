@@ -13,7 +13,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       view: {
-        name: 'checkout',
+        name: 'modal',
         params: {}
       },
       cart: []
@@ -86,7 +86,11 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.view.name === 'catalog') {
+    if (this.state.view.name === 'modal') {
+      return (
+        <Disclaimer setView={this.setView} />
+      );
+    } else if (this.state.view.name === 'catalog') {
       return (
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />
