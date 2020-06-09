@@ -132,11 +132,11 @@ class CheckoutForm extends React.Component {
         </small>
         <h1 className="mb-4 mt-5 brand-font font-weight-bold">My Cart</h1>
         <h3 className="text-muted pb-4">Order Total: ${this.getTotal()}</h3>
-        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-5">
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-5 p-5">
           <h2 className="mt-3">Billing Address</h2>
           <div className="row">
             <div className="input-group-lg mb-3 col-md-6">
-              <label className="d-block mt-4" htmlFor="firstName">First Name</label>
+              <label className="d-block mt-4" htmlFor="firstName">First Name<sup className="">*</sup></label>
               <input
                 onChange={this.handleChangeFirstName}
                 className="form-control"
@@ -146,7 +146,7 @@ class CheckoutForm extends React.Component {
                 required />
             </div>
             <div className="input-group-lg mb-3 col-md-6">
-              <label className="d-block mt-4" htmlFor="lastName">Last Name</label>
+              <label className="d-block mt-4" htmlFor="lastName">Last Name<sup className="">*</sup></label>
               <input
                 onChange={this.handleChangeLastName}
                 className="form-control"
@@ -158,7 +158,7 @@ class CheckoutForm extends React.Component {
           </div>
           <div className="row">
             <div className="input-group-lg mb-3 col-md-6">
-              <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1</label>
+              <label className="d-block mt-4" htmlFor="addressLine2">Address Line 1<sup className="">*</sup></label>
               <input
                 onChange={this.handleChangeAddressLine1}
                 className="form-control"
@@ -180,7 +180,7 @@ class CheckoutForm extends React.Component {
           </div>
           <div className="row">
             <div className="input-group-lg mb-3 col-md-6">
-              <label className="d-block mt-4" htmlFor="city">City</label>
+              <label className="d-block mt-4" htmlFor="city">City<sup className="">*</sup></label>
               <input
                 onChange={this.handleChangeCity}
                 className="form-control"
@@ -189,7 +189,7 @@ class CheckoutForm extends React.Component {
                 required />
             </div>
             <div className="input-group-lg mb-3 col-md-3">
-              <label className="d-block mt-4" htmlFor="state">State</label>
+              <label className="d-block mt-4" htmlFor="state">State<sup className="">*</sup></label>
               <select
                 onChange={this.handleChangeState}
                 className="form-control"
@@ -249,7 +249,7 @@ class CheckoutForm extends React.Component {
               </select>
             </div>
             <div className="input-group-lg mb-3 col-md-3">
-              <label className="d-block mt-4" htmlFor="zipCode">Zip Code</label>
+              <label className="d-block mt-4" htmlFor="zipCode">Zip Code<sup className="">*</sup></label>
               <input
                 onChange={this.handleChangeZipCode}
                 className="form-control"
@@ -260,7 +260,7 @@ class CheckoutForm extends React.Component {
           </div>
           <h2 className="my-4">Payment Details</h2>
           <div className="input-group-lg mb-3 col-sm-9 px-0">
-            <label className="d-block" htmlFor="creditCard">Credit Card</label>
+            <label className="d-block" htmlFor="creditCard">Credit Card<sup className="">*</sup></label>
             <input
               onChange={this.handleChangeCard}
               className="form-control"
@@ -271,7 +271,7 @@ class CheckoutForm extends React.Component {
           </div>
           <div className="row">
             <div className="input-group-lg mb-3 col-sm-3">
-              <label className="d-block mt-4" htmlFor="month">Month</label>
+              <label className="d-block mt-4" htmlFor="month">Month<sup className="">*</sup></label>
               <select
                 onChange={this.handleChangeMonth}
                 className="form-control"
@@ -294,7 +294,7 @@ class CheckoutForm extends React.Component {
               </select>
             </div>
             <div className="input-group-lg mb-3 col-sm-3">
-              <label className="d-block mt-4" htmlFor="year">Year</label>
+              <label className="d-block mt-4" htmlFor="year">Year<sup className="">*</sup></label>
               <select
                 onChange={this.handleChangeYear}
                 className="form-control"
@@ -316,13 +316,25 @@ class CheckoutForm extends React.Component {
               </select>
             </div>
             <div className="input-group-lg mb-3 col-sm-3">
-              <label className="d-block mt-4" htmlFor="cvv">CVV</label>
+              <label className="d-block mt-4" htmlFor="cvv">CVV<sup className="">*</sup></label>
               <input
                 onChange={this.handleChangeCvv}
                 className="form-control"
                 type="text"
                 id="cvv"
                 required />
+            </div>
+          </div>
+          <div className="row disclaimer mt-5">
+            <div className="custom-control-lg custom-control custom-checkbox mt-5">
+              <input
+                className="custom-control-input"
+                id="checkbox-large"
+                type="checkbox"
+                required />
+              <label className="custom-control-label pl-2" htmlFor="checkbox-large" ><sup className="">*  </sup>
+                I understand that this website is for demonstration purposes only, no payment processing will occur, and I should not use personal information in the form above.
+              </label>
             </div>
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-end">

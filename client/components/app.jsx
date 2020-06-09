@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import Disclaimer from './disclaimer';
 import Carousel from './carousel';
 import Footer from './footer';
 import ProductList from './product-list';
@@ -12,14 +13,16 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       view: {
-        name: 'checkout',
+        name: 'catalog',
         params: {}
       },
-      cart: []
+      cart: [],
+      disclaimer: true
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.handleDisclaimer = this.handleDisclaimer.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +35,12 @@ export default class App extends React.Component {
         name: name,
         params: params
       }
+    });
+  }
+
+  handleDisclaimer() {
+    this.setState({
+      disclaimer: false
     });
   }
 
@@ -85,9 +94,16 @@ export default class App extends React.Component {
   }
 
   render() {
+    let disclaimer = null;
+    if (this.state.disclaimer === true) {
+      disclaimer = <Disclaimer setView={this.setView} handleDisclaimer={this.handleDisclaimer} />;
+    } else {
+      disclaimer = false;
+    }
     if (this.state.view.name === 'catalog') {
       return (
         <div>
+          {disclaimer}
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <Carousel />
           <ProductList setView={this.setView} view={this.state.view} />

@@ -45,6 +45,32 @@
   font-family: 'Julius Sans One', sans-serif;
 }
 
+.modal {
+  background-color: rgba(0,0,0,.50);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  min-width:50%;
+  max-width:650px;
+  border-radius: .25rem;
+  text-align: center;
+  position: fixed;
+  border: 15px solid rgb(202, 171, 187);
+  border-radius: .25rem;
+  background-color: white;
+}
+
+.modal-p {
+  font-size: 1.2rem;
+}
+
 .carousel {
   height: 75vh;
   margin-left: 0;
@@ -89,13 +115,17 @@
   object-fit: contain;
 }
 
+.disclaimer {
+  padding-left: 1.25rem;
+  font-size: 1.5rem;
+}
+
 .box {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075);
 }
 
 .checkout-border {
   border: 1px solid lightgray;
-  padding: 1.5rem;
   border-radius: .25rem;
 }
 
@@ -154,5 +184,9 @@
     margin: auto;
     display: flex;
     align-items: center;
+  }
+
+  .disclaimer {
+    font-size: 1.2rem;
   }
 }
