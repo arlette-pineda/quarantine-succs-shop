@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import Disclaimer from './modal';
 import Carousel from './carousel';
 import Footer from './footer';
 import ProductList from './product-list';

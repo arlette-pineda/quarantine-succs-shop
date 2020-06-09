@@ -2,7 +2,9 @@ import React from 'react';
 
 function Disclaimer(props) {
   return (
-    <div>Hi</div>
+    <div className="vh-100">
+      <div>Hi</div>
+    </div>
   );
 }
 
