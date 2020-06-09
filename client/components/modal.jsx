@@ -2,10 +2,10 @@ import React from 'react';
 
 function Disclaimer(props) {
   return (
-    <div className="d-flex vh-100 align-items-center modal">
-      <div className="text-center justify-content-center modal-box">
-        Quarantine Succs is a full-stack e-commerce application built for demonstration purposes only.
-        <p>By clicking, &quot;I accept&quot; you are acknowledging that personal information shall not be used,
+    <div className="modal">
+      <div className="text-center modal-box p-4">
+        <h1><span className="font-style">Quarantine Succs</span><br></br> is a full-stack e-commerce application built for demonstration purposes only.</h1>
+        <p className="modal-p">By clicking, &quot;I accept&quot; you are acknowledging that personal information shall not be used,
           and that real purchases cannot be made.</p>
         <button onClick={() => props.setView('catalog', {})}
           type="button" className="btn btn-success">I accept</button>

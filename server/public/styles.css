@@ -46,15 +46,29 @@
 }
 
 .modal {
-  background-color: darkgreen;
+  background-color: rgba(0,0,0,.50);
+  position: fixed;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-box {
   background-color: white;
-  border: 1px solid black;
+  min-width:50%;
+  max-width:650px;
   border-radius: .25rem;
-  /* padding: auto; */
-  /* color: black; */
+  text-align: center;
+  position: fixed;
+  border: 15px solid rgb(202, 171, 187);
+  border-radius: .25rem;
+  font-size: 2rem;
+}
+
+.modal-p {
+  font-size: 1.2rem;
 }
 
 .carousel {
