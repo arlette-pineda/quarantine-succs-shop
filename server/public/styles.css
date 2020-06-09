@@ -49,6 +49,7 @@
   background-color: rgba(0,0,0,.50);
   position: fixed;
   height: 100vh;
+  width: 100%;
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -56,7 +57,6 @@
 }
 
 .modal-box {
-  background-color: white;
   min-width:50%;
   max-width:650px;
   border-radius: .25rem;
@@ -64,7 +64,7 @@
   position: fixed;
   border: 15px solid rgb(202, 171, 187);
   border-radius: .25rem;
-  font-size: 2rem;
+  background-color: white;
 }
 
 .modal-p {
