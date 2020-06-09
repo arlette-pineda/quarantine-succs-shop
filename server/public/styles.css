@@ -45,6 +45,18 @@
   font-family: 'Julius Sans One', sans-serif;
 }
 
+.modal {
+  background-color: darkgreen;
+}
+
+.modal-box {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: .25rem;
+  /* padding: auto; */
+  /* color: black; */
+}
+
 .carousel {
   height: 75vh;
   margin-left: 0;
