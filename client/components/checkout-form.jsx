@@ -132,7 +132,7 @@ class CheckoutForm extends React.Component {
         </small>
         <h1 className="mb-4 mt-5 brand-font font-weight-bold">My Cart</h1>
         <h3 className="text-muted pb-4">Order Total: ${this.getTotal()}</h3>
-        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-5">
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-5 p-5">
           <h2 className="mt-3">Billing Address</h2>
           <div className="row">
             <div className="input-group-lg mb-3 col-md-6">
@@ -326,9 +326,9 @@ class CheckoutForm extends React.Component {
             </div>
           </div>
           <div className="row disclaimer mt-5">
-            <div className="form-check">
-              <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-              <label className="form-check-label" htmlFor="exampleCheck1">
+            <div className="custom-control-lg custom-control custom-checkbox mt-5">
+              <input className="custom-control-input" id="checkbox-large" type="checkbox" />
+              <label className="custom-control-label pl-2" htmlFor="checkbox-large">
                 I understand that this website is for demonstration purposes only, no payment processing will occur, and I should not use personal information in the form above.
               </label>
             </div>
