@@ -7,7 +7,8 @@ function Disclaimer(props) {
         Quarantine Succs is a full-stack e-commerce application built for demonstration purposes only.
         <p>By clicking, &quot;I accept&quot; you are acknowledging that personal information shall not be used,
           and that real purchases cannot be made.</p>
-        <button type="button" className="btn btn-success">I accept</button>
+        <button onClick={() => props.setView('catalog', {})}
+          type="button" className="btn btn-success">I accept</button>
       </div>
     </div>
   );
