@@ -327,7 +327,11 @@ class CheckoutForm extends React.Component {
           </div>
           <div className="row disclaimer mt-5">
             <div className="custom-control-lg custom-control custom-checkbox mt-5">
-              <input className="custom-control-input" id="checkbox-large" type="checkbox" />
+              <input
+                className="custom-control-input"
+                id="checkbox-large"
+                type="checkbox"
+                required />
               <label className="custom-control-label pl-2" htmlFor="checkbox-large">
                 I understand that this website is for demonstration purposes only, no payment processing will occur, and I should not use personal information in the form above.
               </label>
