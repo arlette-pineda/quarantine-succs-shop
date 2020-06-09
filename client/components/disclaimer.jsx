@@ -5,7 +5,8 @@ function Disclaimer(props) {
     <div className="modal">
       <div className="text-center modal-box p-5">
         <h1><span className="font-style">Quarantine Succs</span><br></br> is a full-stack e-commerce application built for demonstration purposes only.</h1>
-        <br></br><p className="modal-p">By clicking, &quot;I accept&quot; you are acknowledging that personal information shall not be used,
+        <hr></hr>
+        <p className="modal-p">By clicking, &quot;I accept&quot; and using this site you are acknowledging that personal information shall not be used,
           and that real purchases cannot be made.</p>
         <button onClick={() => props.handleDisclaimer()}
           type="button" className="btn btn-success">I accept</button>
