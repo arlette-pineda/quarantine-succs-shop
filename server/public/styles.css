@@ -89,6 +89,10 @@
   object-fit: contain;
 }
 
+.disclaimer {
+  padding-left: 1.25rem;
+}
+
 .box {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075);
 }
