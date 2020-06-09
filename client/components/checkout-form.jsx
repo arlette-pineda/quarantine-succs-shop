@@ -328,7 +328,9 @@ class CheckoutForm extends React.Component {
           <div className="row disclaimer mt-5">
             <div className="form-check">
               <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-              <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+              <label className="form-check-label" htmlFor="exampleCheck1">
+                I understand that this website is for demonstration purposes only, no payment processing will occur, and I should not use personal information in the form above.
+              </label>
             </div>
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-end">
