@@ -338,7 +338,7 @@ class CheckoutForm extends React.Component {
             </div>
           </div>
           <div className="row mt-5 ml-2 mr-2 d-flex justify-content-end">
-            <button type="submit" className="btn btn-primary mb-2">Place Order</button>
+            <button type="submit" className="btn btn-color mb-2">Place Order</button>
           </div>
         </form>
       </div>
