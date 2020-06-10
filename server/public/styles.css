@@ -48,6 +48,7 @@
 .btn-color {
   background-color:rgb(202, 171, 187);
   color: white;
+  font-size: 1.3rem;
 }
 
 .modal {

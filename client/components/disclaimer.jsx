@@ -9,7 +9,7 @@ function Disclaimer(props) {
         <p className="modal-p">By clicking, &quot;I accept&quot; and using this site you are acknowledging that personal information shall not be used,
           and that real purchases cannot be made.</p>
         <button onClick={() => props.handleDisclaimer()}
-          type="button" className="btn btn-success">I accept</button>
+          type="button" className="btn btn-color">I accept</button>
       </div>
     </div>
   );
