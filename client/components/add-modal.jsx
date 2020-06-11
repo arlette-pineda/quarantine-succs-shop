@@ -4,7 +4,12 @@ function AddModal(props) {
   const setView = props.setView;
 
   return (
-    <div className="modal-wrapper">
+    <div className="modal-wrapper"
+      style={{
+        opacity: showModal ? '1' : '0'
+      }}
+
+    >
       <div className="modal-header">
         <span className="close-modal-btn">x</span>
       </div>

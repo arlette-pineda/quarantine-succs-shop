@@ -5,7 +5,7 @@ import Carousel from './carousel';
 import Footer from './footer';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
-import AddModal from './add-modal';
+// import AddModal from './add-modal';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
 
@@ -14,7 +14,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       view: {
-        name: 'modalll',
+        name: 'details',
         params: {}
       },
       cart: [],
@@ -109,12 +109,6 @@ export default class App extends React.Component {
           <Carousel />
           <ProductList setView={this.setView} view={this.state.view} />
           <Footer />
-        </div>
-      );
-    } else if (this.state.view.name === 'modalll') {
-      return (
-        <div>
-          <AddModal setView={this.setView} />
         </div>
       );
     } else if (this.state.view.name === 'details') {

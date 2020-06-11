@@ -135,8 +135,8 @@
 
 .modal-header {
   background-color: white;
-  color: black;
-  padding: 1rem 1rem 0px;
+  color: rgb(59, 58, 58);
+  padding: 0.5rem 1rem 0px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
