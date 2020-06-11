@@ -10,9 +10,10 @@ function AddModal() {
         <div className="modal-body">
           <h5>Item has been added to cart!</h5>
         </div>
-        <div className="modal-footer"></div>
-        <button className="btn-continue">Continue Shopping</button>
-        <button className="btn-checkout">Go to Cart</button>
+        <div className="modal-footer row">
+          <button className="btn-continue col ">Continue Shopping</button>
+          <button className="btn-checkout col ">Go to Cart</button>
+        </div>
       </div>
     </div>
   );
