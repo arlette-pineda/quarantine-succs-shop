@@ -14,11 +14,12 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       view: {
-        name: 'catalog',
+        name: 'modalll',
         params: {}
       },
       cart: [],
-      disclaimer: true
+      disclaimer: true,
+      addModal: false
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
@@ -105,11 +106,16 @@ export default class App extends React.Component {
       return (
         <div>
           {disclaimer}
-          <AddModal />
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <Carousel />
           <ProductList setView={this.setView} view={this.state.view} />
           <Footer />
+        </div>
+      );
+    } else if (this.state.view.name === 'modalll') {
+      return (
+        <div>
+          <AddModal setView={this.setView} />
         </div>
       );
     } else if (this.state.view.name === 'details') {
