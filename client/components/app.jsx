@@ -5,7 +5,6 @@ import Carousel from './carousel';
 import Footer from './footer';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
-// import AddModal from './add-modal';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
 
@@ -14,7 +13,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       view: {
-        name: 'details',
+        name: 'catalog',
         params: {}
       },
       cart: [],
