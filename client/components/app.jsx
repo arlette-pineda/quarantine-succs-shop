@@ -18,8 +18,7 @@ export default class App extends React.Component {
         params: {}
       },
       cart: [],
-      disclaimer: true,
-      addModal: false
+      disclaimer: true
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);

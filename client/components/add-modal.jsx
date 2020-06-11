@@ -1,24 +1,31 @@
 import React from 'react';
 
-function AddModal(props) {
-  const setView = props.setView;
+class AddModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addModal: false
+    };
+  }
 
-  return (
-    <div className="modal-wrapper">
-      <div className="modal-header">
-        <span className="close-modal-btn">x</span>
-      </div>
-      <div className="modal-content">
-        <div className="modal-body">
-          <h5>Item has been added to cart!</h5>
+  render() {
+    return (
+      <div className="modal-wrapper">
+        <div className="modal-header">
+          <span className="close-modal-btn">x</span>
         </div>
-        <div className="modal-footer row">
-          <button onClick={() => setView('catalog', {})} className="btn-continue col">Continue Shopping</button>
-          <button onClick={() => setView('cart', {})} className="btn-checkout col">Go to Cart</button>
+        <div className="modal-content">
+          <div className="modal-body">
+            <h5>Item has been added to cart!</h5>
+          </div>
+          <div className="modal-footer row">
+            <button onClick={() => this.props.setView('catalog', {})} className="btn-continue col">Continue Shopping</button>
+            <button onClick={() => this.props.setView('cart', {})} className="btn-checkout col">Go to Cart</button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default AddModal;
