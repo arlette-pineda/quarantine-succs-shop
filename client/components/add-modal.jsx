@@ -6,12 +6,11 @@ function AddModal(props) {
   return (
     <div className="modal-wrapper"
       style={{
-        opacity: showModal ? '1' : '0'
+        opacity: props.addModal ? '1' : '0'
       }}
-
     >
       <div className="modal-header">
-        <span className="close-modal-btn">x</span>
+        <span className="close-modal-btn" onClick={() => props.closeModal()}>x</span>
       </div>
       <div className="modal-content">
         <div className="modal-body">
