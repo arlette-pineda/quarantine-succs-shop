@@ -8,6 +8,9 @@ class ProductDetails extends React.Component {
       product: null,
       addModal: false
     };
+
+    this.showModal = this.showModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   getProductById() {
