@@ -6,7 +6,8 @@ function AddModal(props) {
   return (
     <div className="modal-wrapper"
       style={{
-        opacity: props.addModal ? '1' : '0'
+        transform: props.modalShowing ? 'translateY(0vh)' : 'translateY(-100vh)',
+        opacity: props.modalShowing ? '1' : '0'
       }}
     >
       <div className="modal-header">
