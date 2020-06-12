@@ -58,7 +58,7 @@ class ProductDetails extends React.Component {
                   className="btn btn-success mt-1">
                 Add to Cart</button>
               </div>
-              <button onClick={() => this.props.showModal()} type="button" className="btn btn-info">Test</button>
+              <button onClick={() => this.showModal()} type="button" className="btn btn-info">Test</button>
             </div>
             <div className="row p-4">
               {this.state.product.longDescription}
