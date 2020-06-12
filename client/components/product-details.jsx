@@ -6,7 +6,7 @@ class ProductDetails extends React.Component {
     super(props);
     this.state = {
       product: null,
-      addModal: false
+      modalShowing: false
     };
 
     this.showModal = this.showModal.bind(this);
@@ -29,13 +29,13 @@ class ProductDetails extends React.Component {
 
   showModal() {
     this.setState({
-      addModal: true
+      modalShowing: true
     });
   }
 
   closeModal() {
     this.setState({
-      addModal: false
+      modalShowing: false
     });
   }
 
@@ -53,17 +53,21 @@ class ProductDetails extends React.Component {
                 <div className="card-text pb-3">
                   {this.state.product.shortDescription}
                 </div>
-                <button onClick={() => { this.props.addToCart(this.state.product); this.showModal(); }}
+                <button onClick={() => this.props.addToCart(this.state.product)}
                   type="button"
                   className="btn btn-success mt-1">
                 Add to Cart</button>
               </div>
+              <button onClick={() => this.props.showModal()} type="button" className="btn btn-info">Test</button>
             </div>
             <div className="row p-4">
               {this.state.product.longDescription}
             </div>
           </div>
-          <AddModal showModal={this.showModal} closeModal={this.closeModal} setView={this.props.setView} />
+          <AddModal modalShowing={this.state.modalShowing}
+            showModal={this.showModal}
+            closeModal={this.closeModal}
+            setView={this.props.setView} />
         </div>
       );
     } else {
