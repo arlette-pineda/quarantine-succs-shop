@@ -198,11 +198,13 @@
 }
 
 .modal-drop {
-  background-color: rgb(63, 61, 61, 0.692);
-  height: 100%;
   position: fixed;
   transition: all 1.3s;
   width: 100%;
+  /* background-color: rgba(0,0,0,.50); */
+  height: 100%;
+  z-index: 10;
+  display: flex;
 }
 
 .box {
