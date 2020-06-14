@@ -42,13 +42,8 @@ class ProductDetails extends React.Component {
   render() {
     if (this.state.product != null) {
       return (
-        <div>
-          {this.state.modalShowing ? <div onClick={() => this.closeModal()} className="modal-drop"></div> : null }
-          <AddModal modalShowing={this.state.modalShowing}
-            showModal={this.showModal}
-            closeModal={this.closeModal}
-            setView={this.props.setView} />
-          <div className="container col-md-9 mb-2 cart-height">
+        <div className="mt-4">
+          <div className="container col-md-9 mb-2 mt-5 cart-height">
             <small className="row ml-2 my-5 mb-3 back" onClick={() => this.props.setView('catalog', {})}> &lt;Back to catalog </small>
             <div className="row">
               <img className="col-5 d-inline img-style pl-4" src={this.state.product.image} />
@@ -58,18 +53,21 @@ class ProductDetails extends React.Component {
                 <div className="card-text pb-3">
                   {this.state.product.shortDescription}
                 </div>
-                <button onClick={() => this.props.addToCart(this.state.product)}
+                <button onClick={() => { this.props.addToCart(this.state.product); this.showModal(); }}
                   type="button"
                   className="btn btn-success mt-1">
                 Add to Cart</button>
               </div>
-              <button onClick={() => this.showModal()} type="button" className="btn btn-info">Test</button>
             </div>
             <div className="row p-4">
               {this.state.product.longDescription}
             </div>
           </div>
-
+          {this.state.modalShowing ? <div onClick={() => this.closeModal()} ></div> : null}
+          <AddModal modalShowing={this.state.modalShowing}
+            showModal={this.showModal}
+            closeModal={this.closeModal}
+            setView={this.props.setView} />
         </div>
       );
     } else {
