@@ -36,7 +36,7 @@
 }
 
 .cart-height {
-  min-height: 80vh;
+  min-height: 70vh;
 }
 
 .brand-font {
@@ -58,6 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 1.3s;
 }
 
 .modal-box {

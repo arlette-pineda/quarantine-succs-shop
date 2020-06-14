@@ -4,14 +4,11 @@ function AddModal(props) {
   const setView = props.setView;
 
   return (
-    <div className={`${props.modalShowing ? 'modal' : 'd-none'}`}
-      style={{
-        opacity: props.modalShowing ? '1' : '0'
-      }}>
+    // { props.modalShowing ? <div onClick={() => this.closeModal()} ></div> : null }
+    <div className={`${props.modalShowing ? 'modal' : 'd-none'}`}>
       <div className="modal-wrapper"
         style={{
-          transform: props.modalShowing ? 'translateY(0vh)' : 'translateY(-100vh)',
-          opacity: props.modalShowing ? '1' : '0'
+          transform: props.modalShowing ? 'translateY(0vh)' : 'translateY(-100vh)'
         }}
       >
         <div className="modal-header">
