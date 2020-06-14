@@ -63,6 +63,7 @@ class ProductDetails extends React.Component {
               {this.state.product.longDescription}
             </div>
           </div>
+          {this.state.modalShowing ? <div onClick={() => this.closeModal()} ></div> : null}
           <AddModal modalShowing={this.state.modalShowing}
             showModal={this.showModal}
             closeModal={this.closeModal}

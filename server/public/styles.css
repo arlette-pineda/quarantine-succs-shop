@@ -58,7 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 1.3s;
+  transition: all 1.3s ease;
 }
 
 .modal-box {

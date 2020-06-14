@@ -4,8 +4,8 @@ function AddModal(props) {
   const setView = props.setView;
 
   return (
-    // { props.modalShowing ? <div onClick={() => this.closeModal()} ></div> : null }
-    <div className={`${props.modalShowing ? 'modal' : 'd-none'}`}>
+    <div className={`${props.modalShowing ? 'modal' : 'd-none'}`}
+      onClick={props.modalShowing ? () => props.closeModal() : undefined} >
       <div className="modal-wrapper"
         style={{
           transform: props.modalShowing ? 'translateY(0vh)' : 'translateY(-100vh)'
