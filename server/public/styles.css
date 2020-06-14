@@ -58,7 +58,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 1.3s ease;
 }
 
 .modal-box {
@@ -202,12 +201,13 @@
   position: fixed;
   transition: all 1.3s;
   width: 100%;
-  /* background-color: rgba(0,0,0,.50); */
   height: 100%;
-  /* z-index: 10; */
+  z-index: 10;
   display: flex;
   top: 0;
   left: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .box {

@@ -4,7 +4,7 @@ function AddModal(props) {
   const setView = props.setView;
 
   return (
-    <div className={`${props.modalShowing ? 'modal' : 'd-none'}`}
+    <div className={`${props.modalShowing ? 'modal-drop' : 'd-none'}`}
       onClick={props.modalShowing ? () => props.closeModal() : undefined} >
       <div className="modal-wrapper"
         style={{
