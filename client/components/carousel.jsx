@@ -20,6 +20,10 @@ class Carousel extends React.Component {
           className="slider"
         >
           <div className='d-flex justify-content-center align-items-center'>
+            <img className='carousel-img' src="/images/carousel0.jpg" alt="0" />
+            <div className="slide__caption">&quot;Caption 0 here. Caption 0 here.Caption 0 here. Caption 0 here.&quot;</div>
+          </div>
+          <div className='d-flex justify-content-center align-items-center'>
             <img className='carousel-img' src="/images/carousel1.jpg" alt="1"/>
             <div className="slide__caption">&quot;Caption 1 here. Caption 1 here.Caption 1 here. Caption 1 here.&quot;</div>
           </div>
@@ -34,14 +38,6 @@ class Carousel extends React.Component {
           <div>
             <img className='carousel-img' src="/images/carousel4.jpg" alt="4" />
             <div className="slide__caption">&quot;Caption 4 here. Caption 4 here.Caption 4 here. Caption 4 here.&quot;</div>
-          </div>
-          <div>
-            <img className='carousel-img' src="/images/carousel5.jpg" alt="5" />
-            <div className="slide__caption">&quot;Caption 5 here. Caption 5 here.Caption 5 here. Caption 5 here.&quot;</div>
-          </div>
-          <div>
-            <img className='carousel-img' src="/images/carousel6.jpg" alt="6" />
-            <div className="slide__caption">&quot;Caption 6 here. Caption 6 here.Caption 6 here. Caption 6 here.&quot;</div>
           </div>
         </Slider>
       </div>
