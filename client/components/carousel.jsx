@@ -21,21 +21,27 @@ class Carousel extends React.Component {
         >
           <div className='d-flex justify-content-center align-items-center'>
             <img className='carousel-img' src="/images/carousel1.jpg" alt="1"/>
+            <div className="slide__caption">&quot;Caption 1 here. Caption 1 here.Caption 1 here. Caption 1 here.&quot;</div>
           </div>
           <div className='d-flex justify-content-center align-items-center'>
             <img className='carousel-img' src="/images/carousel2.jpg" alt="2" />
+            <div className="slide__caption">&quot;Caption 2 here. Caption 2 here.Caption 2 here. Caption 2 here.&quot;</div>
           </div>
           <div className='d-flex justify-content-center align-items-center'>
             <img className='carousel-img' src="/images/carousel3.jpg" alt="3" />
+            <div className="slide__caption">&quot;Caption 3 here. Caption 3 here.Caption 3 here. Caption 3 here.&quot;</div>
           </div>
           <div>
             <img className='carousel-img' src="/images/carousel4.jpg" alt="4" />
+            <div className="slide__caption">&quot;Caption 4 here. Caption 4 here.Caption 4 here. Caption 4 here.&quot;</div>
           </div>
           <div>
             <img className='carousel-img' src="/images/carousel5.jpg" alt="5" />
+            <div className="slide__caption">&quot;Caption 5 here. Caption 5 here.Caption 5 here. Caption 5 here.&quot;</div>
           </div>
           <div>
             <img className='carousel-img' src="/images/carousel6.jpg" alt="6" />
+            <div className="slide__caption">&quot;Caption 6 here. Caption 6 here.Caption 6 here. Caption 6 here.&quot;</div>
           </div>
         </Slider>
       </div>
