@@ -106,11 +106,25 @@
 }
 
 .white-shadow {
-  text-shadow: 1px 0 white, 0 1px white;
+  text-shadow: 2px 2px 0px #fff,
+              -2px -2px 0px #fff,
+              -2px 2px 0px #fff,
+              2px -2px 0px #fff,
+              2px 0 0px #fff,
+              -2px 0 0px #fff,
+              0 2px 0px #fff,
+              0 -2px 0px #fff;
 }
 
 .black-shadow {
-  text-shadow: 1px 0 black, 0 1px black;
+  text-shadow: 2px 2px 0px #000,
+              -2px -2px 0px #000,
+              -2px 2px 0px #000,
+              2px -2px 0px #000,
+              2px 0 0px #000,
+              -2px 0 0px #000,
+              0 2px 0px #000,
+              0 -2px 0px #000;
 }
 
 .img-style {
@@ -297,5 +311,9 @@
 
   .disclaimer {
     font-size: 1.2rem;
+  }
+
+  .slide__caption  h3 {
+    font-size: 1.9rem;
   }
 }

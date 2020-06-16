@@ -42,7 +42,7 @@ class Carousel extends React.Component {
           </div>
           <div className='d-flex justify-content-center'>
             <img className='carousel-img' src="/images/carousel4.jpg" alt="Echeveria succulent next to paper and paintbrushes" />
-            <div className="slide__caption white-shadow;">
+            <div className="slide__caption white-shadow">
               <h3>Let Them Be Your Cheerleaders</h3>
               <p>&quot;Whether painting, reading, or gaming let the little ones quietly cheer you on.&quot;</p>
             </div>
