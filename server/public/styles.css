@@ -88,8 +88,9 @@
 
 .carousel-img {
   height: 60vh;
+  /* min-height: 800px; */
   width: 100%;
-  /* max-width: 1500px; */
+  /* max-width: 1600px; */
   object-fit: cover;
   object-position: 50% 50%;
   overflow-x: hidden;
