@@ -89,7 +89,6 @@
 .carousel-img {
   height: 60vh;
   width: 100%;
-  /* max-width: 1500px; */
   object-fit: cover;
   object-position: 50% 50%;
   overflow-x: hidden;
@@ -102,11 +101,30 @@
   width: 100%;
   z-index: 2;
   text-align: center;
-  /* font-size: 1.6rem; */
   background-position: center;
-  /* color: #a9688f; */
   padding: 10px 20px;
-  text-shadow: ivory 1px 0 10px;
+}
+
+.white-shadow {
+  text-shadow: 2px 2px 0px #fff,
+              -2px -2px 0px #fff,
+              -2px 2px 0px #fff,
+              2px -2px 0px #fff,
+              2px 0 0px #fff,
+              -2px 0 0px #fff,
+              0 2px 0px #fff,
+              0 -2px 0px #fff;
+}
+
+.black-shadow {
+  text-shadow: 2px 2px 0px #000,
+              -2px -2px 0px #000,
+              -2px 2px 0px #000,
+              2px -2px 0px #000,
+              2px 0 0px #000,
+              -2px 0 0px #000,
+              0 2px 0px #000,
+              0 -2px 0px #000;
 }
 
 .img-style {
@@ -293,5 +311,9 @@
 
   .disclaimer {
     font-size: 1.2rem;
+  }
+
+  .slide__caption  h3 {
+    font-size: 1.9rem;
   }
 }
