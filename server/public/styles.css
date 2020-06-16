@@ -88,9 +88,7 @@
 
 .carousel-img {
   height: 60vh;
-  /* min-height: 800px; */
   width: 100%;
-  /* max-width: 1600px; */
   object-fit: cover;
   object-position: 50% 50%;
   overflow-x: hidden;
@@ -103,11 +101,16 @@
   width: 100%;
   z-index: 2;
   text-align: center;
-  /* font-size: 1.6rem; */
   background-position: center;
-  /* color: #a9688f; */
   padding: 10px 20px;
-  text-shadow: ivory 1px 0 10px;
+}
+
+.white-shadow {
+  text-shadow: 1px 0 white, 0 1px white;
+}
+
+.black-shadow {
+  text-shadow: 1px 0 black, 0 1px black;
 }
 
 .img-style {
