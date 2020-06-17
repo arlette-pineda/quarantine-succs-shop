@@ -158,7 +158,7 @@
 }
 
 .modal-wrapper {
-  background-color: #8fb655;
+  /* background-color: #8fb655; */
   width: 25%;
   max-width: 800px;
   margin: 4rem auto;
@@ -323,5 +323,9 @@
 
   .modal-box {
     border: 5px solid white;
+  }
+
+  .modal-wrapper {
+    width: 60%;
   }
 }
