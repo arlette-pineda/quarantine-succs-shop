@@ -328,4 +328,8 @@
   .modal-wrapper {
     width: 60%;
   }
+
+  .modal-body h5 {
+    font-size: 1.1rem;
+  }
 }
