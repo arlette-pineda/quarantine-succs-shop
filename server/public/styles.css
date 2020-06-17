@@ -158,7 +158,7 @@
 }
 
 .modal-wrapper {
-  background-color: #8fb655;
+  /* background-color: #8fb655; */
   width: 25%;
   max-width: 800px;
   margin: 4rem auto;
@@ -226,8 +226,9 @@
 .btn-continue {
   background-color: rgb(202, 171, 187);
 }
-.btn-checkout {
+#btn-checkout {
   background-color: #6bbc62;
+
 }
 
 .modal-drop {
@@ -315,5 +316,33 @@
 
   .slide__caption  h3 {
     font-size: 1.9rem;
+  }
+
+  .font-style {
+    font-size: 1.6rem;
+  }
+
+  .modal-box {
+    border: 5px solid white;
+  }
+
+  .modal-wrapper {
+    width: 60%;
+  }
+
+  .modal-body {
+  margin-bottom: none;
+}
+
+  .modal-body h5 {
+    font-size: 1.1rem;
+  }
+
+  .modal-footer button {
+    font-size: 0.7rem;
+  }
+
+  #btn-checkout {
+    padding: 1rem 0.9rem;
   }
 }
