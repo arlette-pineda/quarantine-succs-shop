@@ -226,8 +226,9 @@
 .btn-continue {
   background-color: rgb(202, 171, 187);
 }
-.btn-checkout {
+#btn-checkout {
   background-color: #6bbc62;
+
 }
 
 .modal-drop {
@@ -329,7 +330,19 @@
     width: 60%;
   }
 
+  .modal-body {
+  margin-bottom: none;
+}
+
   .modal-body h5 {
     font-size: 1.1rem;
+  }
+
+  .modal-footer button {
+    font-size: 0.7rem;
+  }
+
+  #btn-checkout {
+    padding: 1rem 0.9rem;
   }
 }

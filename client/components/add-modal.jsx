@@ -20,7 +20,7 @@ function AddModal(props) {
           </div>
           <div className="modal-footer row">
             <button onClick={() => setView('catalog', {})} className="btn-continue col">Continue Shopping</button>
-            <button onClick={() => setView('cart', {})} className="btn-checkout col">Go to Cart</button>
+            <button onClick={() => setView('cart', {})} id="btn-checkout" className="col">Go to Cart</button>
           </div>
         </div>
       </div>
