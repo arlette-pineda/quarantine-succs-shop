@@ -320,4 +320,8 @@
   .font-style {
     font-size: 1.6rem;
   }
+
+  .modal-box {
+    border: 5px solid white;
+  }
 }
