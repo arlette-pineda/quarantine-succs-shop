@@ -287,6 +287,10 @@
   .modal-wrapper {
     width: 50%;
   }
+
+  #btn-checkout {
+    padding: 1.2rem 0.9rem;
+  }
 }
 
 @media screen and (max-width: 375px) {
