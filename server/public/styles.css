@@ -62,7 +62,7 @@
 
 .modal-box {
   min-width:50%;
-  max-width:650px;
+  max-width:667px;
   border-radius: .25rem;
   text-align: center;
   position: fixed;
@@ -284,6 +284,10 @@
 }
 
 @media screen and (max-width: 670px) {
+  .modal-box {
+    border: none
+  }
+
   .modal-wrapper {
     width: 50%;
   }
@@ -345,8 +349,8 @@
   }
 
   .modal-body {
-  margin-bottom: none;
-}
+    margin-bottom: none;
+  }
 
   .modal-body h5 {
     font-size: 1.1rem;
