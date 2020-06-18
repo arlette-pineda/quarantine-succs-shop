@@ -62,7 +62,7 @@
 
 .modal-box {
   min-width:50%;
-  max-width:650px;
+  max-width:667px;
   border-radius: .25rem;
   text-align: center;
   position: fixed;
@@ -283,6 +283,28 @@
   }
 }
 
+@media screen and (max-width: 670px) {
+  .modal-box {
+    border: none
+  }
+
+  .modal-box h1 {
+    font-size: 2rem;
+  }
+
+  .modal-wrapper {
+    width: 50%;
+  }
+
+  #btn-checkout {
+    padding: 1.2rem 0.9rem;
+  }
+
+  .icon-size {
+  width: 10vw;
+  height: 10vh;
+}
+
 @media screen and (max-width: 375px) {
   .prod-details-style {
     border: none;
@@ -331,8 +353,8 @@
   }
 
   .modal-body {
-  margin-bottom: none;
-}
+    margin-bottom: none;
+  }
 
   .modal-body h5 {
     font-size: 1.1rem;
