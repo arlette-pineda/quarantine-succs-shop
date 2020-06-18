@@ -283,6 +283,12 @@
   }
 }
 
+@media screen and (max-width: 670px) {
+  .modal-wrapper {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .prod-details-style {
     border: none;
