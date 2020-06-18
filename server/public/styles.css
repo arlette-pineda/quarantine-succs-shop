@@ -288,6 +288,10 @@
     border: none
   }
 
+  .modal-box h1 {
+    font-size: 2rem;
+  }
+
   .modal-wrapper {
     width: 50%;
   }
