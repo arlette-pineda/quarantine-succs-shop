@@ -7,13 +7,16 @@ function CartSummaryItem(props) {
         <div className="col-md-4">
           <img className="img-details" src={props.image} />
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 ">
           <div className="card-body">
             <h3 className="card-title brand-font">{props.itemName}</h3>
             <p className="card-text text-muted" >${(props.price / 100).toFixed(2)}</p>
             <p className="card-subtitle">{props.shortDesc}</p>
           </div>
         </div>
+      </div>
+      <div className="d-flex justify-content-end">
+        <button type="button" className="btn-remove">Remove</button>
       </div>
     </div>
   );
