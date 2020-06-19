@@ -290,6 +290,18 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .modal-wrapper {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 812px) {
+  #btn-checkout {
+    padding: 1.2rem 0.9rem;
+  }
+}
+
 @media screen and (max-width: 670px) {
   .modal-box {
     border: none
@@ -301,10 +313,6 @@
 
   .modal-wrapper {
     width: 50%;
-  }
-
-  #btn-checkout {
-    padding: 1.2rem 0.9rem;
   }
 
   .icon-size {
@@ -352,7 +360,8 @@
   }
 
   .modal-box {
-    border: 5px solid white;
+    border: 10px solid rgb(202, 171, 187);
+    height: 100vh;
   }
 
   .modal-wrapper {
