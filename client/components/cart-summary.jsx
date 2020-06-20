@@ -36,6 +36,7 @@ function CartSummary(props) {
               price={cartItem.price}
               shortDesc={cartItem.shortDescription}
               image={cartItem.image}
+              productId={cartItem.productId}
               setView={props.setView}
             />
           );
