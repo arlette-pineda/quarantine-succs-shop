@@ -5,7 +5,7 @@ function CartSummaryItem(props) {
     <div className="card p-3 m-2 box mb-4">
       <div className="row">
         <div className="col-md-4">
-          <img className="img-details" src={props.image} />
+          <img className="img-details" src={props.image} onClick={() => props.setView('details', { product: props.product.productId })} />
         </div>
         <div className="col-md-8 ">
           <div className="card-body">
