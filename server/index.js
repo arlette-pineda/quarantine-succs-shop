@@ -234,6 +234,21 @@ app.delete('/api/cart/:cartItemId', (req, res, next) => {
   returning *
   `;
 
+  const values = [cartItemId, cartId];
+
+  db.query(sql, values)
+    .then(result => {
+      if (result.rowCount === 0) {
+        throw new ClientError(`cannot find cart item ${cartItemId}`, 400);
+      } else if (!cartId) {
+        throw new ClientError(`cannot find cart ${cartId}`, 400);
+      } else {
+        res.status(204).json(`Item ${cartItemId} has been deleted`);
+      }
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 app.use('/api', (req, res, next) => {
