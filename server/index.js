@@ -222,6 +222,20 @@ app.post('/api/orders', (req, res, next) => {
     });
 });
 
+// DELETE from cart
+app.delete('/api/cart/:cartItemId', (req, res, next) => {
+  const cartItemId = req.params.cartItemId;
+  const cartId = req.session.cartId;
+
+  const sql = `
+  delete from "cartItems"
+  where "cartItemId" = $1
+  and "cartId" = $2
+  returning *
+  `;
+
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
