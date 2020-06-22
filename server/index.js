@@ -222,6 +222,35 @@ app.post('/api/orders', (req, res, next) => {
     });
 });
 
+// DELETE from cart
+app.delete('/api/cart/:cartItemId', (req, res, next) => {
+  const cartItemId = req.params.cartItemId;
+  const cartId = req.session.cartId;
+
+  const sql = `
+  delete from "cartItems"
+  where "cartItemId" = $1
+  and "cartId" = $2
+  returning *
+  `;
+
+  const values = [cartItemId, cartId];
+
+  db.query(sql, values)
+    .then(result => {
+      if (result.rowCount === 0) {
+        throw new ClientError(`cannot find cart item ${cartItemId}`, 400);
+      } else if (!cartId) {
+        throw new ClientError(`cannot find cart ${cartId}`, 400);
+      } else {
+        res.status(204).json(`Item ${cartItemId} has been deleted`);
+      }
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
