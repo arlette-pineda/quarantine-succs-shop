@@ -6,6 +6,8 @@ class CartSummaryItem extends React.Component {
     this.state = {
       removeModalShowing: false
     };
+    this.showModal = this.showModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   showModal() {
@@ -36,7 +38,7 @@ class CartSummaryItem extends React.Component {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <button type="button" className="btn-remove">Remove</button>
+          <button type="button" className="btn-remove" onClick={() => this.showModal()}>Remove</button>
         </div>
       </div>
     );
