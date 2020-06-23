@@ -21,6 +21,7 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.deleteItemInCart = this.deleteItemInCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.handleDisclaimer = this.handleDisclaimer.bind(this);
   }
