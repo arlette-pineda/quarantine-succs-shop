@@ -21,6 +21,7 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.deleteItemInCart = this.deleteItemInCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.handleDisclaimer = this.handleDisclaimer.bind(this);
   }
@@ -67,6 +68,20 @@ export default class App extends React.Component {
           cart: allItems
         });
       })
+      .catch(err =>
+        console.error(err)
+      );
+  }
+
+  deleteItemInCart(theCartItemId) {
+    const req = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ theCartItemId })
+    };
+    fetch(`/api/cart/${theCartItemId}`, req)
+      .then(response => response.json())
+      .then(result => this.getCartItems())
       .catch(err =>
         console.error(err)
       );
@@ -122,7 +137,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />
-          <CartSummary cart={this.state.cart} setView={this.setView} paramProp={this.state.view.params} />
+          <CartSummary cart={this.state.cart} setView={this.setView} paramProp={this.state.view.params} deleteItem={this.deleteItemInCart} />
           <Footer />
         </div>
       );
