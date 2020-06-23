@@ -137,7 +137,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header cartItemCount={this.state.cart} setView={this.setView} />
-          <CartSummary cart={this.state.cart} setView={this.setView} paramProp={this.state.view.params} />
+          <CartSummary cart={this.state.cart} setView={this.setView} paramProp={this.state.view.params} deleteItem={this.deleteItemInCart} />
           <Footer />
         </div>
       );
