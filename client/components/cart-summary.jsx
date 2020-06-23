@@ -38,6 +38,7 @@ function CartSummary(props) {
               image={cartItem.image}
               productId={cartItem.productId}
               setView={props.setView}
+              deleteItem={props.deleteItem}
             />
           );
         }
