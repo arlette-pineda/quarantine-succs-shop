@@ -4,11 +4,10 @@ function RemoveModal(props) {
   const setView = props.setView;
 
   return (
-    <div className={`${props.modalShowing ? 'modal-drop' : 'd-none'}`}
-      onClick={props.modalShowing ? () => props.closeModal() : undefined} >
+    <div className={`${props.removeModalShowing ? 'modal-drop' : 'd-none'}`} >
       <div className="modal-wrapper"
         style={{
-          transform: props.modalShowing ? 'translateY(0vh)' : 'translateY(-100vh)'
+          transform: props.removeModalShowing ? 'translateY(0vh)' : 'translateY(-100vh)'
         }}
       >
         <div className="modal-header">
