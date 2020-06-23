@@ -25,22 +25,29 @@ class CartSummaryItem extends React.Component {
 
   render() {
     return (
-      <div className="card p-3 m-2 box mb-4">
-        <div className="row">
-          <div className="col-md-4">
-            <img className="img-details pointer" src={this.props.image} onClick={() => this.props.setView('details', { product: this.props.productId })} />
-          </div>
-          <div className="col-md-8 ">
-            <div className="card-body">
-              <h3 className="card-title brand-font">{this.props.itemName}</h3>
-              <p className="card-text text-muted" >${(this.props.price / 100).toFixed(2)}</p>
-              <p className="card-subtitle">{this.props.shortDesc}</p>
+      <div>
+        <div className="card p-3 m-2 box mb-4">
+          <div className="row">
+            <div className="col-md-4">
+              <img className="img-details pointer" src={this.props.image} onClick={() => this.props.setView('details', { product: this.props.productId })} />
+            </div>
+            <div className="col-md-8 ">
+              <div className="card-body">
+                <h3 className="card-title brand-font">{this.props.itemName}</h3>
+                <p className="card-text text-muted" >${(this.props.price / 100).toFixed(2)}</p>
+                <p className="card-subtitle">{this.props.shortDesc}</p>
+              </div>
             </div>
           </div>
+          <div className="d-flex justify-content-end">
+            <button type="button" className="btn-remove" onClick={() => this.showModal()}>Remove</button>
+          </div>
         </div>
-        <div className="d-flex justify-content-end">
-          <button type="button" className="btn-remove" onClick={() => this.showModal()}>Remove</button>
-        </div>
+        <RemoveModal removeModal={this.state.removeModalShowing}
+          showModal={this.showModal}
+          closeModal={this.closeModal}
+          setView={this.props.setView}
+        />
       </div>
     );
   }
