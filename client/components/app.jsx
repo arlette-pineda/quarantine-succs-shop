@@ -72,6 +72,20 @@ export default class App extends React.Component {
       );
   }
 
+  deleteItemInCart(cartItemId) {
+    const req = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ cartItemId })
+    };
+    fetch(`/api/cart/${cartItemId}`, req)
+      .then(response => response.json())
+      .then(result => this.getCartItems())
+      .catch(err =>
+        console.error(err)
+      );
+  }
+
   placeOrder(orderObject) {
     fetch('/api/orders', {
       method: 'POST',
