@@ -6,6 +6,19 @@ class CartSummaryItem extends React.Component {
     this.state = {
       removeModalShowing: false
     };
+  }
+
+  showModal() {
+    this.setState({
+      removeModalShowing: true
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      removeModalShowing: false
+    });
+  }
 
   render() {
     return (
@@ -27,7 +40,6 @@ class CartSummaryItem extends React.Component {
         </div>
       </div>
     );
-    }
   }
 }
 
