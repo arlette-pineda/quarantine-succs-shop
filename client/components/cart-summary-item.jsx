@@ -1,4 +1,5 @@
 import React from 'react';
+import RemoveModal from './remove-modal';
 
 class CartSummaryItem extends React.Component {
   constructor(props) {
