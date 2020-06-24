@@ -13,8 +13,7 @@ class CartSummaryItem extends React.Component {
   }
 
   removeFromCart(cartItemId) {
-    const theCartItemId = this.props.key;
-    this.props.deleteItem(theCartItemId);
+    this.props.deleteItem(cartItemId);
     this.closeModal();
   }
 
@@ -50,12 +49,12 @@ class CartSummaryItem extends React.Component {
             <button type="button" className="btn-remove" onClick={() => this.showModal()}>Remove</button>
           </div>
         </div>
-        <RemoveModal removeModal={this.state.removeModalShowing}
+        <RemoveModal removeModalShowing={this.state.removeModalShowing}
           showModal={this.showModal}
           closeModal={this.closeModal}
           setView={this.props.setView}
           removeFromCart={this.removeFromCart}
-          cartItemId={this.props.key}
+          cartItemId={this.props.cartItemId}
         />
       </div>
     );
