@@ -18,8 +18,8 @@ function RemoveModal(props) {
             <h5>Are you sure you want to remove item from cart?</h5>
           </div>
           <div className="modal-footer row">
-            <button className="btn-continue col">Cancel</button>
-            <button onClick={() => setView('cart', {})} id="btn-checkout" className="col">Remove</button>
+            <button className="btn-cancel col">Cancel</button>
+            <button onClick={} id="btn-remove-cart" className="col">Remove</button>
           </div>
         </div>
       </div>

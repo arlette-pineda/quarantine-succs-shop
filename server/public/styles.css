@@ -244,6 +244,14 @@
   align-items: center;
 }
 
+.btn-cancel {
+  background-color: dimgray;
+}
+
+.btn-remove-cart {
+  background-color: firebrick;
+}
+
 .btn-remove {
   text-decoration: underline;
   color: dimgray;

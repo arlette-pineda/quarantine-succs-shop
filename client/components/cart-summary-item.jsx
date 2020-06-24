@@ -9,9 +9,10 @@ class CartSummaryItem extends React.Component {
     };
     this.showModal = this.showModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
   }
 
-  removeFromCart() {
+  removeFromCart(cartItemId) {
     const theCartItemId = this.props.key;
     this.props.deleteItem(theCartItemId);
     this.closeModal();
@@ -54,7 +55,7 @@ class CartSummaryItem extends React.Component {
           closeModal={this.closeModal}
           setView={this.props.setView}
           removeFromCart={this.removeFromCart}
-          theCartItemId={this.theCartItemId}
+          cartItemId={this.props.key}
         />
       </div>
     );
