@@ -61,8 +61,7 @@
 }
 
 .modal-box {
-  /* min-width:50%; */
-  max-width:667px;
+  max-width: 667px;
   border-radius: .25rem;
   text-align: center;
   position: fixed;
@@ -291,6 +290,28 @@
   color: dimgray;
   font-size: 0.7rem;
   width: 35%;
+}
+
+.scroll-to-top {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  /* margin-left: -50px; */
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.scroll-to-top button {
+  background: #16700c;
+  color: white;
+  font-family: Teko;
+  font-size: 16px;
+  line-height: 30px;
+  border-radius: 15px;
+  width: 100px;
+  padding-top: 4px;
 }
 
 @media (hover: hover) {
