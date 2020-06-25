@@ -9,11 +9,11 @@ class CartSummaryItem extends React.Component {
     };
     this.showModal = this.showModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
   }
 
-  removeFromCart() {
-    const theCartItemId = this.props.key;
-    this.props.deleteItem(theCartItemId);
+  removeFromCart(cartItemId) {
+    this.props.deleteItem(cartItemId);
     this.closeModal();
   }
 
@@ -38,10 +38,10 @@ class CartSummaryItem extends React.Component {
               <img className="img-details pointer" src={this.props.image} onClick={() => this.props.setView('details', { product: this.props.productId })} />
             </div>
             <div className="col-md-8 ">
-              <div className="card-body">
-                <h3 className="card-title brand-font">{this.props.itemName}</h3>
+              <div className="card-body" id="csi-card-body">
+                <h3 className="card-title brand-font" >{this.props.itemName}</h3>
                 <p className="card-text text-muted" >${(this.props.price / 100).toFixed(2)}</p>
-                <p className="card-subtitle">{this.props.shortDesc}</p>
+                <p className="card-subtitle" >{this.props.shortDesc}</p>
               </div>
             </div>
           </div>
@@ -49,12 +49,14 @@ class CartSummaryItem extends React.Component {
             <button type="button" className="btn-remove" onClick={() => this.showModal()}>Remove</button>
           </div>
         </div>
-        <RemoveModal removeModal={this.state.removeModalShowing}
+        <RemoveModal removeModalShowing={this.state.removeModalShowing}
           showModal={this.showModal}
           closeModal={this.closeModal}
           setView={this.props.setView}
           removeFromCart={this.removeFromCart}
-          theCartItemId={this.theCartItemId}
+          cartItemId={this.props.cartItemId}
+          itemName={this.props.itemName}
+          image={this.props.image}
         />
       </div>
     );

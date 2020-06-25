@@ -7,9 +7,6 @@ function AddModal(props) {
     <div className={`${props.modalShowing ? 'modal-drop' : 'd-none'}`}
       onClick={props.modalShowing ? () => props.closeModal() : undefined} >
       <div className="modal-wrapper"
-        style={{
-          transform: props.modalShowing ? 'translateY(0vh)' : 'translateY(-100vh)'
-        }}
       >
         <div className="modal-header">
           <span className="close-modal-btn" onClick={() => props.closeModal()}>x</span>

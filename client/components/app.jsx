@@ -4,6 +4,7 @@ import Disclaimer from './disclaimer';
 import Carousel from './carousel';
 import Footer from './footer';
 import ProductList from './product-list';
+import ScrollToTop from './scroll-to-top';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
@@ -73,14 +74,13 @@ export default class App extends React.Component {
       );
   }
 
-  deleteItemInCart(theCartItemId) {
+  deleteItemInCart(cartItemId) {
     const req = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ theCartItemId })
+      body: JSON.stringify({ cartItemId })
     };
-    fetch(`/api/cart/${theCartItemId}`, req)
-      .then(response => response.json())
+    fetch(`/api/cart/${cartItemId}`, req)
       .then(result => this.getCartItems())
       .catch(err =>
         console.error(err)
@@ -122,6 +122,7 @@ export default class App extends React.Component {
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <Carousel />
           <ProductList setView={this.setView} view={this.state.view} />
+          <ScrollToTop />
           <Footer />
         </div>
       );

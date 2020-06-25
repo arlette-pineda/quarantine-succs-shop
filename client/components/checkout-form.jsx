@@ -126,13 +126,13 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <div className="container cart-height mt-5">
-        <small className="back"
+        <small className="back ml-1"
           onClick={() => this.props.setView('catalog', {})}>
           &lt; Continue Shopping
         </small>
-        <h1 className="mb-4 mt-5 brand-font font-weight-bold">My Cart</h1>
-        <h3 className="text-muted pb-4">Order Total: ${this.getTotal()}</h3>
-        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-5 p-5">
+        <h1 className="mb-4 mt-5 ml-3 brand-font font-weight-bold">My Cart</h1>
+        <h3 className="text-muted pb-4 ml-3">Order Total: ${this.getTotal()}</h3>
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="checkout-border mb-5 m-2" id="form">
           <h2 className="mt-3">Billing Address</h2>
           <div className="row">
             <div className="input-group-lg mb-3 col-md-6">

@@ -26,12 +26,13 @@ function CartSummary(props) {
         onClick={() => props.setView('catalog', {})}>
         &lt;Back to catalog
       </small>
-      <h1 className="mt-3 ml-3 my-3 brand-font font-weight-bold">My Cart</h1>
+      <h1 className="ml-3 brand-font font-weight-bold" id="my-cart-summary">My Cart</h1>
       {
-        props.cart.map(cartItem => {
+        props.cart.map((cartItem, index) => {
           return (
             <CartSummaryItem
-              key={cartItem.cartItemId}
+              cartItemId={cartItem.cartItemId}
+              key={index}
               itemName={cartItem.name}
               price={cartItem.price}
               shortDesc={cartItem.shortDescription}
