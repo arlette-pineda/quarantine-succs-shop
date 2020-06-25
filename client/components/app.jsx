@@ -80,7 +80,6 @@ export default class App extends React.Component {
       body: JSON.stringify({ cartItemId })
     };
     fetch(`/api/cart/${cartItemId}`, req)
-      .then(response => response.json())
       .then(result => this.getCartItems())
       .catch(err =>
         console.error(err)

@@ -243,7 +243,7 @@ app.delete('/api/cart/:cartItemId', (req, res, next) => {
       } else if (!cartId) {
         throw new ClientError(`cannot find cart ${cartId}`, 400);
       } else {
-        res.status(204).json(`Item ${cartItemId} has been deleted`);
+        res.status(204).json({ message: `Item ${cartItemId} has been deleted` });
       }
     })
     .catch(err => {
