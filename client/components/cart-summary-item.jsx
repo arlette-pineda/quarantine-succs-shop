@@ -56,6 +56,7 @@ class CartSummaryItem extends React.Component {
           removeFromCart={this.removeFromCart}
           cartItemId={this.props.cartItemId}
           itemName={this.props.itemName}
+          image={this.props.image}
         />
       </div>
     );
