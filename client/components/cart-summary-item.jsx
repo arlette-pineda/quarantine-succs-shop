@@ -38,10 +38,10 @@ class CartSummaryItem extends React.Component {
               <img className="img-details pointer" src={this.props.image} onClick={() => this.props.setView('details', { product: this.props.productId })} />
             </div>
             <div className="col-md-8 ">
-              <div className="card-body">
-                <h3 className="card-title brand-font">{this.props.itemName}</h3>
+              <div className="card-body" id="csi-card-body">
+                <h3 className="card-title brand-font" >{this.props.itemName}</h3>
                 <p className="card-text text-muted" >${(this.props.price / 100).toFixed(2)}</p>
-                <p className="card-subtitle">{this.props.shortDesc}</p>
+                <p className="card-subtitle" >{this.props.shortDesc}</p>
               </div>
             </div>
           </div>

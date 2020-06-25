@@ -194,10 +194,6 @@
   border-radius: 0px 0px .25rem .25rem;
 }
 
-/* .modal-body {
-  margin-bottom: 1rem;
-} */
-
 .modal-body h5 {
   font-size: 1.6rem;
   color: #16700c;
@@ -413,25 +409,16 @@
     height: 45vw;
   }
 
-  .card-body h3 {
+  #csi-card-body {
+    text-align: center;
+  }
+
+  #csi-card-body h3 {
     font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .card-title {
-    text-align: center;
-  }
-
-  .card-text {
-    text-align: center;
-  }
-
-  .card-subtitle {
-    text-align: center;
   }
 
   .img-details-remove {
-    height: 20vh;
+    height: 20vw;
   }
 
   .modal-body-remove h5 {
