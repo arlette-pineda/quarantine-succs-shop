@@ -8,15 +8,13 @@ class Carousel extends React.Component {
       <div className="carousel">
         <Slider
           autoplay={true}
-          autoplaySpeed={3500}
+          autoplaySpeed={4000}
           slidesToShow={1}
           slidesToScroll={1}
           infinite={true}
           fade={true}
-          speed={2000}
+          speed={4000}
           dots={true}
-          // arrows={true}
-          // adaptiveHeight={true}
           className="slider"
         >
           <div className='d-flex text-white justify-content-center'>

@@ -61,7 +61,7 @@
 }
 
 .modal-box {
-  min-width:50%;
+  /* min-width:50%; */
   max-width:667px;
   border-radius: .25rem;
   text-align: center;
@@ -162,6 +162,11 @@
   padding-left: 1.25rem;
   font-size: 1.5rem;
 }
+
+#my-cart-summary {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
 
 .modal-wrapper {
   width: 25%;
@@ -279,6 +284,7 @@
 .checkout-border {
   border: 1px solid lightgray;
   border-radius: .25rem;
+  padding: 3rem;
 }
 
 .back {
@@ -315,6 +321,12 @@
   .modal-wrapper {
     width: 40%;
   }
+
+  #my-cart-summary {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
 }
 
 @media screen and (max-width: 812px) {
@@ -423,4 +435,9 @@
 
   .modal-body-remove h5 {
     font-size: 1rem;
+  }
+
+  #form {
+    padding: 1.5rem;
+  }
 }
