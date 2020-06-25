@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductListItem from './product-list-item';
+import ScrollToTop from './scroll-to-top';
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class ProductList extends React.Component {
             />);
           })}
         </div>
+
       </div>
     );
   }
