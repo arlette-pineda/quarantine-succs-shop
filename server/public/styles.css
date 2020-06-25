@@ -408,4 +408,32 @@
   #btn-checkout {
     padding: 1rem 0.9rem;
   }
+
+  .img-details {
+    height: 45vw;
+  }
+
+  .card-body h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .card-title {
+    text-align: center;
+  }
+
+  .card-text {
+    text-align: center;
+  }
+
+  .card-subtitle {
+    text-align: center;
+  }
+
+  .img-details-remove {
+    height: 20vh;
+  }
+
+  .modal-body-remove h5 {
+    font-size: 1rem;
 }
