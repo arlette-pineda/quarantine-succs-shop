@@ -371,6 +371,10 @@
   .icon-size {
   width: 10vw;
   height: 10vh;
+  }
+  .scroll-to-top {
+    left: 80%;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -459,5 +463,13 @@
 
   #form {
     padding: 1.5rem;
+  }
+
+  .scroll-to-top {
+    left: 70%;
+  }
+
+  .scroll-to-top button {
+    font-size: 1rem;
   }
 }
