@@ -293,25 +293,24 @@
 }
 
 .scroll-to-top {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
-  left: 50%;
-  /* margin-left: -50px; */
+  left: 85%;
   z-index: 2;
   cursor: pointer;
-  opacity: 0.4;
   text-align: center;
 }
 
 .scroll-to-top button {
-  background: #16700c;
+  background: #42b136;
   color: white;
-  font-family: Teko;
+  font-family: 'Julius Sans One', sans-serif;
   font-size: 16px;
   line-height: 30px;
   border-radius: 15px;
   width: 100px;
   padding-top: 4px;
+  border: none;
 }
 
 @media (hover: hover) {
