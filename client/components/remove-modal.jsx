@@ -11,7 +11,7 @@ function RemoveModal(props) {
         </div>
         <div className="modal-content">
           <div className="modal-body">
-            <h5>Are you sure you want to remove item from cart?</h5>
+            <h5>Are you sure you want to remove <span id="remove-item-name">{props.itemName}</span> from cart?</h5>
           </div>
           <div className="modal-footer row">
             <button className="btn-cancel col" onClick={() => props.closeModal()}>Cancel</button>

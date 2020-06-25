@@ -260,6 +260,11 @@
   border: 1px solid transparent;
 }
 
+#remove-item-name {
+  font-weight: bold;
+  color: rgb(202, 171, 187);
+}
+
 .box {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075);
 }
