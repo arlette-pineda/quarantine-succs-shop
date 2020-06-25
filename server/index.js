@@ -126,18 +126,24 @@ app.post('/api/cart', (req, res, next) => {
 
       const price = result.rows[0].price;
 
-      const insertSql = `
+      if (!req.session.cartId) {
+
+        const insertSql = `
         insert into "carts" ("cartId", "createdAt")
         values (default, default)
         returning "cartId"
       `;
 
-      return (
-        db.query(insertSql)
-          .then(insertResult => {
-            return { cartId: insertResult.rows[0].cartId, price: price };
-          })
-      );
+        return (
+          db.query(insertSql)
+            .then(insertResult => {
+              return { cartId: insertResult.rows[0].cartId, price: price };
+            })
+        );
+      }
+
+      return { cartId: req.session.cartId, price: price };
+
     })
     .then(cartIdPriceResult => {
       req.session.cartId = cartIdPriceResult.cartId;
