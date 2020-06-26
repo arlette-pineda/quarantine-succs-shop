@@ -314,21 +314,28 @@
 
 .why {
   text-align: center;
+  padding: 0px 60px 20px;
+  color: rgb(202, 171, 187);
 }
 
 .why h2 {
   text-transform: uppercase;
   line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.why div > p {
+  color: black;
 }
 
 .divider {
-    width: 100%;
-    margin-bottom: 20px;
-    display: block;
-    border: 0;
-    border-color: #aaaaaa;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+  border: 0;
+  border-color: #aaaaaa;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 @media (hover: hover) {
