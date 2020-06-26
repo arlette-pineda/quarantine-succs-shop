@@ -304,12 +304,11 @@
 .scroll-to-top i {
   background: #42b136;
   color: white;
-  font-family: 'Julius Sans One', sans-serif;
-  font-size: 16px;
   line-height: 30px;
   border-radius: 15px;
-  width: 100px;
+  width: 50px;
   padding-top: 4px;
+  padding-bottom: 4px;
   border: none;
 }
 
@@ -347,11 +346,18 @@
     margin-bottom: 1rem;
   }
 
+  .scroll-to-top {
+    left: 93%;
+  }
 }
 
 @media screen and (max-width: 812px) {
   #btn-checkout {
     padding: 1.2rem 0.9rem;
+  }
+
+  .scroll-to-top {
+    left: 90%;
   }
 }
 
@@ -372,9 +378,7 @@
   width: 10vw;
   height: 10vh;
   }
-  .scroll-to-top {
-    left: 80%;
-  }
+
 }
 
 @media screen and (max-width: 375px) {
@@ -466,10 +470,10 @@
   }
 
   .scroll-to-top {
-    left: 70%;
+    left: 80%;
   }
 
-  .scroll-to-top button {
+  /* .scroll-to-top i {
     font-size: 1rem;
-  }
+  } */
 }
