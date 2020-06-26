@@ -322,10 +322,12 @@
   text-transform: uppercase;
   line-height: 1.5;
   letter-spacing: 2px;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .why div > p {
-  color: black;
+  color: rgb(32, 67, 32);
+  font-family: Gill Sans, sans-serif;
 }
 
 .divider {
