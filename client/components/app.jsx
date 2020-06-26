@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import Disclaimer from './disclaimer';
 import Carousel from './carousel';
+import Why from './why-quar-succs';
 import Footer from './footer';
 import ProductList from './product-list';
 import ScrollToTop from './scroll-to-top';
@@ -121,6 +122,7 @@ export default class App extends React.Component {
           {disclaimer}
           <Header cartItemCount={this.state.cart} setView={this.setView} />
           <Carousel />
+          <Why />
           <ProductList setView={this.setView} view={this.state.view} />
           <ScrollToTop />
           <Footer />

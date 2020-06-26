@@ -31,6 +31,10 @@ class CheckoutForm extends React.Component {
     this.getTotal = this.getTotal.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   getTotal() {
     const initialValue = 0;
     const total = this.props.cart.reduce((accum, currV) => {

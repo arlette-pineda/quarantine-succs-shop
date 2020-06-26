@@ -301,16 +301,43 @@
   text-align: center;
 }
 
-.scroll-to-top button {
+.scroll-to-top i {
   background: #42b136;
   color: white;
-  font-family: 'Julius Sans One', sans-serif;
-  font-size: 16px;
   line-height: 30px;
   border-radius: 15px;
-  width: 100px;
+  width: 50px;
   padding-top: 4px;
+  padding-bottom: 4px;
   border: none;
+}
+
+.why {
+  text-align: center;
+  padding: 0px 60px 20px;
+  color: rgb(202, 171, 187);
+}
+
+.why h2 {
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.why div > p {
+  color: rgb(32, 67, 32);
+  font-family: Gill Sans, sans-serif;
+}
+
+.divider {
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+  border: 0;
+  border-color: #aaaaaa;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 @media (hover: hover) {
@@ -347,11 +374,18 @@
     margin-bottom: 1rem;
   }
 
+  .scroll-to-top {
+    left: 93%;
+  }
 }
 
 @media screen and (max-width: 812px) {
   #btn-checkout {
     padding: 1.2rem 0.9rem;
+  }
+
+  .scroll-to-top {
+    left: 90%;
   }
 }
 
@@ -372,9 +406,7 @@
   width: 10vw;
   height: 10vh;
   }
-  .scroll-to-top {
-    left: 80%;
-  }
+
 }
 
 @media screen and (max-width: 375px) {
@@ -466,10 +498,10 @@
   }
 
   .scroll-to-top {
-    left: 70%;
+    left: 80%;
   }
 
-  .scroll-to-top button {
+  /* .scroll-to-top i {
     font-size: 1rem;
-  }
+  } */
 }
