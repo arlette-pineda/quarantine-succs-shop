@@ -20,6 +20,7 @@ Try the app live [here!](https://wicked-sales.arlettepineda.com/)
 - Users can view list of all products
 - Users can view details of each product
 - Users can add products to cart
+- Users can remove products from cart
 - Users can view their cart summary
 - Users can go to checkout and place order
 
