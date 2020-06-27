@@ -1,5 +1,5 @@
-# Wicked Sales Shopping Cart
-A full stack Node.js and React shopping cart app.
+# Quarantine Succs Shop
+A full stack Node.js and React e-commerce app.
 
 ## Technologies Used
 - React.js
@@ -24,8 +24,9 @@ Try the app live [here!](https://wicked-sales.arlettepineda.com/)
 - Users can go to checkout and place order
 
 ## Preview
-![Wicked Sales Preview Add to Cart](addToCart.gif "Wicked Sales add to cart preview")
-![Wicked Sales Preview Checkout](checkoutPreview.gif "Wicked Sales checkout preview")
+![Quarantine Succs Preview Add to Cart](addToCart.gif "Quarantine Succs add to cart preview")
+![Quarantine Succs Preview Checkout](checkout.gif "Quarantine Succs checkout preview")
+![Quarantine Succs Preview Scroll to Top](scrollToTop.gif "Quarantine Succs scroll to top preview")
 
 ### Development
 - Node.js 10 or higher
