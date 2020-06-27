@@ -43,7 +43,7 @@ Try the app live [here!](https://wicked-sales.arlettepineda.com/)
   ```
 2. Change directories to folder.
   ```
-    cd wicked-sales-js
+    cd quarantine-succs-shop
   ```
 3. Install dependencies with NPM.
   ```
@@ -55,7 +55,7 @@ Try the app live [here!](https://wicked-sales.arlettepineda.com/)
   ```
 5. Create database.
   ```
-     createdb wickedSales
+     createdb quarantineSuccs
   ```
 6. Import database to PostgreSQL.
   ```
