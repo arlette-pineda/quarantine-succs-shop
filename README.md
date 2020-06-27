@@ -38,7 +38,7 @@ Try the app live [here!](https://wicked-sales.arlettepineda.com/)
 
 1. Clone the repository.
   ```
-    git clone https://github.com/arlette-pineda/wicked-sales-js
+    git clone https://github.com/arlette-pineda/quarantine-succs-shop
   ```
 2. Change directories to folder.
   ```
