@@ -14,7 +14,7 @@ A full stack Node.js and React e-commerce app.
 - Babel
 
 ## Live Demo
-Try the app live [here!](https://wicked-sales.arlettepineda.com/)
+Try the app live [here!](https://quarantine-succs-shop.arlettepineda.com/)
 
 ## Features
 - Users can view list of all products
