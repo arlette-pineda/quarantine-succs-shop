@@ -1,5 +1,5 @@
 # Quarantine Succs Shop
-A full stack Node.js and React e-commerce app.
+A full stack Node.js and React e-commerce succulent plant shop.
 
 ## Technologies Used
 - React.js
